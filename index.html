@@ -1,25 +1,78 @@
 <!DOCTYPE html>
 <html>
-<head>
 <style>
   h1{
-    color:blue;
-    font-family:verdana;
+    color:magenta;
+    font-family:monospace;
     font-size:300%;
+    padding: 5px;
+    background-color: rgba(45,45,45,0.1);
   }
-  h2{
-    color:powderblue;
-    font-family:verdana;
-    font-size:200%;
+  h4{
+    color:indigo;
+    padding: 10px;
+    background-color: rgba(45,45,45,0.1);
+    width: 100%;
+  }
+  p {
+    text-align:justify;
+    font-size: 16px;
+    line-height:25px;
+  }
+  .links{
+    margin-right: 10px;
+    opacity: 0.5;    
+  }
+  .frame{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 5px 5px;
+    padding: 5px;
+    }
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: #00f;
+  }
+  #left{
+      float:left;
+      width:50%;
+  }
+  #right{
+      float:right;
+      width:40%;
+  }
+  footer{
+      position:fixed;
+      bottom: 150px
   }
 </style>
+
+<head>
+    <h1>Hello World!</h1>
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <h2>My links</h2>
-  <nav>
-    <a href="https://github.com/ryonski/first-website/blob/main/index.html">GitHub code for this page</a><br>
-    <a href="http://freecodecamp.org/ryonski">freeCodeCamp profile</a><br>
-    <a href="https://www.codewars.com/users/ryonski">Codewars profile</a>
-  </nav>
+  <div class = "frame">
+    <section id="left">
+      <h3> Content</h3>
+        <p> Your content here - <strong>Your bold content here </strong>- <u>Your underlined content here</u> - <em>Your italic content here</em> - <s>Your strikethrough content here</s></p>
+    </section>
+    
+    <aside id="right">
+      <h3> Side Links</h3>
+        <p> Links here</p>
+    </aside>
+  </div>
 </body>
+
+<footer>
+  <hr>
+  <h4>Profile links</h4>
+    <div class="profileLinks">
+      <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
+      <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
+      <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
+  </div>
+</footer>
+
