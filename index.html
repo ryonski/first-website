@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
 <style>
-  h1{
-    color:magenta;
+  body{
+      background-color:white;
+  }
+  header{
+    color:white;
     font-family:monospace;
-    font-size:300%;
-    padding: 5px;
-    background-color: rgba(45,45,45,0.1);
+    font-size: 15px;
+    padding: 0.5em;
+    background-color: #09A7A1;
+  }
+  h3{
+    color:#09A7A1;
   }
   h4{
-    color:indigo;
+    color:white;
     padding: 10px;
-    background-color: rgba(45,45,45,0.1);
-    width: 100%;
+    background-color: #09A7A1;
+    //width: 100%;
   }
   p {
     text-align:justify;
@@ -23,56 +29,55 @@
     margin-right: 10px;
     opacity: 0.5;    
   }
-  .frame{
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 5px 5px;
-    padding: 5px;
-    }
   a {
-    color: #000;
+    color: #ff790e;
   }
   a:hover {
     color: #00f;
+    transform: scale(1.1);
   }
   #left{
       float:left;
-      width:50%;
+      width:70%;
   }
   #right{
       float:right;
-      width:40%;
+      width:20%;
   }
   footer{
-      position:fixed;
-      bottom: 150px
+      float:left;
+      width: 100%;
+  }
+ .profileLinks:hover{
+      background: linear-gradient(35deg,#ccFFFF,#FFCCCC);
+    border-radius: 10px;
+    margin: auto;
+    padding: 5px
   }
 </style>
 
-<head>
-    <h1>Hello World!</h1>
-</head>
-<body>
-  <div class = "frame">
-    <section id="left">
-      <h3> Content</h3>
-        <p> Your content here - <strong>Your bold content here </strong>- <u>Your underlined content here</u> - <em>Your italic content here</em> - <s>Your strikethrough content here</s></p>
-    </section>
+<header>
+<h1>Hello World!</h1>
+</header>
+
+<section id="left">
+<h3> Content</h3>
+<p> Your content here -     <strong>Your bold content here </strong>- <u>Your underlined content here</u> - <em>Your italic content here</em> - <s>Your strikethrough content here</s>
+</p>
+</section>
     
-    <aside id="right">
-      <h3> Side Links</h3>
-        <p> Links here</p>
-    </aside>
-  </div>
-</body>
+<aside id="right">
+<h3> Side Links</h3>
+<p> Links here</p>
+</aside>
 
 <footer>
-  <hr>
-  <h4>Profile links</h4>
-    <div class="profileLinks">
-      <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
-      <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
-      <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
-  </div>
+<hr>  
+<h4>Profile links</h4>
+<div class="profileLinks">
+<a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
+<a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
+<a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
+</div>
+  
 </footer>
-
