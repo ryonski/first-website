@@ -2,7 +2,6 @@
 <html>
 <style>
 
-
 ul{
     list-style: none;
 }
@@ -12,9 +11,6 @@ a{
     color:white;
 }
 
-  
-
-
 .tab-bar{
   display: flex;
   position: fixed;
@@ -23,7 +19,7 @@ a{
   width: 100%;
   height: 50px;
   align-items:center;
-  background: grey;
+  background: red;
 }
 
 .tabs{
@@ -32,18 +28,17 @@ a{
 
 .tabs a{
     diplay: flex;
-    padding:10px;
+    padding:15px;   
 }
 
 .tabs a:hover{
-    background:darkorange;
+    background-color:teal;
 }
 
 .intro-section{
     height:100vh;
     display: flex;
     align-items: center;
-    background-color:lightsalmon;
     justify-content: center;
 
 }
@@ -51,26 +46,35 @@ a{
 .middle-section{
     height:100vh;
     display: flex;
+    flex-direction:column;
     align-items: center;
-    background-color:lightsalmon;
     justify-content: center;
 }
 
 .profile-section{
-    height:100vh;
+    height:95%;
     display: flex;
     flex-direction:column;
     align-items: center;
-    justify-content: center;background-color:lightsalmon;   
+    justify-content: center;   
 }
-
+.profile-links {
+    background-color:black;
+    padding:5px;
+}
 .profile-links a{
     padding: 10px;
-    transition: 1.5s;
+    transition: 0.5s;
+    //color:black;
 }
 
 .profile-links a:hover{
-    color:blue;
+    color:cyan;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
 }
 
 </style>
@@ -87,6 +91,9 @@ a{
     <li>
       <a href="#profile">Profile</a>
     </li>
+    <li>
+      <button onclick="myFunction()">Toggle dark mode</button>
+    </li>
   </ul>
 </nav>
 
@@ -96,6 +103,7 @@ a{
 
 <section id="middle" class="middle-section">
     <h2>Middle bit goes here</h2>
+    <p> To add CSS grid here</p>
 </section>
 
 <section id="profile" class="profile-section">
@@ -108,8 +116,15 @@ a{
 </section>
 
 <footer>
-    <p> footer message here</p>
+    <p> footer message goes here</p>
 </footer>
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
 
 </body>
 </html>
