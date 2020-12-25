@@ -1,6 +1,7 @@
 <html>
 <style>
 
+
 ul{
     list-style: none;
 }
@@ -8,14 +9,6 @@ ul{
 a{
     text-decoration: none;
     color:white;
-}
-
-.profile-links{
-    //height:100vh;
-    //display: flex;
-    //align-items: center;
-    //justify-content: center
-background-color:blue;   
 }
 
 .tab-bar{
@@ -48,7 +41,6 @@ background-color:blue;
     align-items: center;
     background-color:lightsalmon;
     justify-content: center;
-
 }
 
 .middle-section{
@@ -62,12 +54,23 @@ background-color:blue;
 .profile-section{
     height:100vh;
     display: flex;
+    flex-direction:column;
     align-items: center;
     justify-content: center;background-color:lightsalmon;   
 }
 
+.profile-links a{
+    padding: 10px;
+    transition: 1.5s;
+}
+
+.profile-links a:hover{
+    color:blue;
+}
+
 </style>
 
+<body>    
 <nav class="tab-bar">
   <ul class="tabs">
     <li>
@@ -92,12 +95,13 @@ background-color:blue;
 
 <section id="profile" class="profile-section">
     <h2>Profile links go here</h2>
-    <!--
+    
 <div class="profile-links">
-    <p> paragraph</p>
  <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
  <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
  <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
  </div>
--->
+
  </section>
+</body>
+</html>    
