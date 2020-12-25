@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
 <style>
-    
 h1,h2{
     font-family: courier;
+    text-align:center;
 }
     
 h1{
-    font-size: 60px:
+    font-size: 60px;
 }
 
 h2{
-    font-size: 40px:
+    font-size: 40px;
 }
-
-    
 ul{
     list-style: none;
 }
@@ -22,6 +20,8 @@ ul{
 a{
     text-decoration: none;
     color:white;
+    font-size: 30px;
+    font-family: code;
 }
 
 .tab-bar{
@@ -30,18 +30,19 @@ a{
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 60px;
   align-items:center;
   background: red;
 }
 
 .tabs{
     display: flex;   
+    align-items: center;
 }
 
 .tabs a{
     diplay: flex;
-    padding:15px;   
+    padding:12px;  
 }
 
 .tabs a:hover{
@@ -65,7 +66,7 @@ a{
 }
 
 .profile-section{
-    height:100vh;
+    height:95%;
     display: flex;
     flex-direction:column;
     align-items: center;
@@ -78,7 +79,7 @@ a{
 .profile-links a{
     padding: 10px;
     transition: 0.5s;
-    //color:black;
+    font-size:20px;
 }
 
 .profile-links a:hover{
@@ -105,7 +106,7 @@ a{
       <a href="#profile">Profile</a>
     </li>
     <li>
-      <button onclick="myFunction()">Toggle dark mode</button>
+      <button id="toggle-button" onclick="myFunction()">Toggle dark mode</button>
     </li>
   </ul>
 </nav>
