@@ -1,105 +1,46 @@
 <!DOCTYPE html>
 <html>
-<style>
-  body{
-      background-color:white;
-      
-  }
-  header{
-    color:white;
-    font-family:monospace;
-    padding: 0.5em;
-    background-color: #09A7A1;
-  }
-  h2{
-    color:#09A7A1;
-    //font-size: 15px;
-    font-family:monospace;
-
-  }
-  p {
-    text-align:justify;
-    //font-size: 16px;
-    line-height:20px;
-  }
-  .links{
-    margin-right: 10px;
-    opacity: 0.5;    
-  }
-  a {
-    //color: #ff790e;
-    color: #803e0a;
-  }
-  a:hover {
-    color: #00f;
-    transform: scale(1.1);
-  }
-  #left{
-      float:left;
-      width:60%;
-      background-color:lightblue;
-      padding:5px;
-  }
-  #right{
-      float:right;
-      width:30%;
-      background-color:lightgrey;
-      padding:5px;
-  }
-
-    #bottom{
-      float:left;
-      width:100%;
-      background-color:lightgreen;
-      padding:5px;
-  }
-  footer{
-      float:left;
-      width: 100%;
-      
-  }
- .profileLinks:hover{
-      background: linear-gradient(35deg,#ccFFFF,#FFCCCC);
-    border-radius: 10px;
-    margin: auto;
-    padding: 5px
-  }
-</style>
-
-<body>
-    <header>
-        <h1>Hello World!</h1>
-    </header>
-
-    <main>
-        <div id="left">
-            <h2> Content</h2>
-                <p> Your content here -     <strong>Your bold content here </strong>- <u>Your underlined content here</u> - <em>Your italic content here</em> - <s>Your strikethrough content here</s></p>
-        </div>
+  <style>
     
-        <div id="right">
-            <h2> Side Nav</h2>
-                <nav>
-                    <ul>
-                        <li><a href="#stealth">Stealth &amp; Agility</a></li>
-                        <li><a href="#combat">Combat</a></li>
-                        <li><a href="#weapons">Weapons</a></li>
-                    </ul>
-                </nav>
-        </div>
+    ul{
+      list-style: none;
+    }
+ 
+    a{
+      text-decoration: none;
+    }
+    
+    .nav{
+      display:flex;
+      justify-content:flex-end;
+      background-color:orange;
+    }
 
-        <div id="bottom">
-            <h2>Profile links</h2>
-        </div>
-    </main>
+  </style>
 
-    <footer>
-        <hr>
-        <div class="profileLinks">
-            <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
-            <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
-            <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
-        </div>
-  
-    </footer>
-</body>
+<nav id="navbar" class="nav">
+  <ul class="nav-list">
+    <li>
+      <a href="#intro">Intro</a>
+    </li>
+    <li>
+      <a href="#middle">Middle</a>
+    </li>
+    <li>
+      <a href="#profile">Profile</a>
+    </li>
+  </ul>
+</nav>
+
+<section id="intro" class="intro-section"
+    <h1>My Intro goes here</h1>
+</section>
+
+<section id="middle" class="middle-section"
+    <h2>Middle bit goes here</h2>
+</section>
+
+<section id="profile" class="profile-section"
+    <h2>Profile links go here</h2>
+</section>
+</html>
