@@ -1,25 +1,42 @@
-<!DOCTYPE html>
 <html>
-  <style>
-    
-    ul{
-      list-style: none;
-    }
- 
-    a{
-      text-decoration: none;
-    }
-    
-    .nav{
-      display:flex;
-      justify-content:flex-end;
-      background-color:orange;
-    }
+<style>
+.intro-section{
+    height:100vh;
+    display: flex;
+    align-items: center;
 
-  </style>
+}
+.middle-section{
+    height:100vh;
+    display: flex;
+    align-items: center;
+}
+.profile-section{
+    height:100vh;
+    display: flex;
+    align-items: center;
+}
 
-<nav id="navbar" class="nav">
-  <ul class="nav-list">
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.tab-bar{
+    background-color:grey;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+}
+
+</style>
+
+
+<nav class="tab-bar">
+  <ul class="tabs">
     <li>
       <a href="#intro">Intro</a>
     </li>
@@ -43,4 +60,3 @@
 <section id="profile" class="profile-section"
     <h2>Profile links go here</h2>
 </section>
-</html>
