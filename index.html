@@ -117,7 +117,13 @@ font-size:20px;
     color:var(--lk--color);
 }
 
-
+.pet-image {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg");
+  height: 300px;
+  width: 300px;
+  background-position: center;
+  background-size: cover;
+}
 </style>
 
 <body>
@@ -145,6 +151,11 @@ font-size:20px;
 <section id="middle" class="middle-section">
     <h2>Middle bit goes here</h2>
     <p> To add CSS grid here</p>
+    <button id="backBtn">Back</button>
+    <div class="pet-image"><h2>Image</h2>
+    </div>
+</div>
+    <button id="nextBtn">Next</button>
 </section>
 
 <section id="profile" class="profile-section">
@@ -165,6 +176,15 @@ function myFunction() {
    var element = document.body;
    element.classList.toggle("dark-mode");
 }
+
+document.getElementById("nextBtn").addEventListener("click", function() {
+  alert("Go to next Picture");
+});
+
+document.getElementById("backBtn").addEventListener("click", function() {
+  alert("Go to previous Picture");
+});
+
 </script>
 
 </body>
