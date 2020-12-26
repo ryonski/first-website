@@ -168,7 +168,7 @@ a{
       <a href="#profile">Profile</a>
     </li>
     <li>
-      <button id="toggle-button" onclick="myFunction()">Toggle dark mode</button>
+      <button id="toggle-button" onclick="myFunction()">Dark Mode</button>
     </li>
   </ul>
 </nav>
@@ -211,6 +211,9 @@ a{
 function myFunction() {
    var element = document.body;
    element.classList.toggle("dark-mode");
+   element = document.getElementById("toggle-button");
+    if (element.innerHTML=="Dark Mode") element.innerHTML = "Light Mode";
+    else element.innerHTML = "Dark Mode";
 }
 
 document.getElementById("nextBtn").addEventListener("click", function() {
