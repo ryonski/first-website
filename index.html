@@ -131,14 +131,14 @@ a{
 }
 
 .pet-image {
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg");
+  //background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg");
+  //background: yellow;
   height: 50vh;
   width: 70vh;
   border: 2px solid var(--tx--color); // To add border toggle (set default 0px);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  
+  background-size: contain;
 }
 
 .grid-container {
@@ -185,7 +185,7 @@ a{
             <button class="imgBtn" id="backBtn"><</button>
         </div>
         <div class="grid-item">
-            <div class="pet-image">
+            <div id="pet-image" class="pet-image">
             </div>
         </div>
         <div class="grid-item">
@@ -216,13 +216,50 @@ function myFunction() {
     else element.innerHTML = "Dark";
 }
 
-document.getElementById("nextBtn").addEventListener("click", function() {
-  alert("Go to next Picture");
+var i=-1;
+
+document.getElementById("nextBtn").addEventListener("click", function(){
+    
+     i++;
+    document.getElementById("pet-image").style.backgroundImage = 'url('+imageArray[i]+')';
+    checkIndex();
+    console.log(i);
+});
+document.getElementById("backBtn").addEventListener("click", function(){
+    
+    i--;
+    document.getElementById("pet-image").style.backgroundImage  = 'url('+imageArray[i]+')';
+    checkIndex();
+    console.log(i);
 });
 
-document.getElementById("backBtn").addEventListener("click", function() {
-  alert("Go to previous Picture");
-});
+function checkIndex() {
+    if (i == imageArray.length-1) {
+        ctlBtn("hide","nextBtn")
+        } else {
+            ctlBtn("unhide","nextBtn")
+        }
+        if (i ==0) {
+            ctlBtn ("hide","backBtn")
+        } else{
+            ctlBtn ("unhide","backBtn")
+        }
+    };
+
+function ctlBtn(action, btn){
+    if (action=="hide") {
+        document.getElementById(btn).style.display = "none";
+    } 
+    if (action=="unhide"){
+    document.getElementById(btn).style.display = "block";
+    }
+}
+
+
+var imageArray = ["https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg","https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg"];
+
+//https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg
+
 
 </script>
 
