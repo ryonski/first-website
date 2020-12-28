@@ -81,7 +81,9 @@ a{
     display: inline-block;
     font-size:25px;
     margin: 35px;
-    background-color:var(--tg--color)
+    background-color:var(--tg--color);
+    position:relative;
+    right: -20px;
 }
 
 .intro-section{
@@ -178,7 +180,7 @@ a{
       <a href="#profile">Profile</a>
     </li>
     <li>
-      <a href="#" id="toggle-button" onclick="myFunction()">&#9789</a>
+      <a href="#" id="toggle-button" onclick="toggleMode()">&#9789</a>
       
     </li>
   </ul>
@@ -219,16 +221,23 @@ a{
 </footer>
 
 <script>
-function myFunction() {
+
+var x=1;
+function toggleMode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
    element = document.getElementById("toggle-button");
-   console.log(element.innerHTML);
+   console.log(x);
+   element.style.right = 20*x +"px";
+   x=x*(-1);
+    //element.style.left = 10 + "px";   
+   //console.log(element.innerHTML);
     if (element.innerHTML=="☽")
     element.innerHTML = "&#9788";
 
     else element.innerHTML = "&#9789";
 }
+
 ctlBtn ("hide","backBtn")
 var i=0;
 
