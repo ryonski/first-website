@@ -2,6 +2,39 @@
 <html>
 <style>
 
+:root {
+  --bg--color: white; 
+  --tx--color: black;
+  --lk--color: blue;
+  --bt--color: orange;
+  --tg--color: darkgray;
+}
+
+.dark-mode {
+  --bg--color: black;
+  --tx--color: white;
+  --lk--color: cyan;
+  --bt--color: #333;
+  --tg--color: yellow;
+}
+
+body{
+    background-color:var(--bg--color);
+    color:var(--tx--color);
+}
+
+h1,h2,h3{
+    font-family: courier;
+    text-align:center;
+}
+    
+h1{
+    font-size: 60px;
+}
+
+h2{
+    font-size: 40px;
+}
 ul{
     list-style: none;
 }
@@ -9,30 +42,45 @@ ul{
 a{
     text-decoration: none;
     color:white;
+    font-size: 30px;
+    font-family: code;
 }
 
 .tab-bar{
   display: flex;
   position: fixed;
+  justify-content: flex-end; 
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
-  align-items:center;
+  height: 60px;
   background: red;
 }
 
 .tabs{
-    display: flex;   
+    display: flex;  
+    align-items: center;  
 }
 
 .tabs a{
     diplay: flex;
-    padding:15px;   
+    padding:12px;  
 }
 
 .tabs a:hover{
     background-color:teal;
+}
+
+#toggle-button{
+    height:30px;
+    margin: 40px;
+    border-radius:5px;
+    font-size:20px;
+    background-color:var(--tg--color)
+}
+
+#toggle-button:hover{
+    color:blue;
 }
 
 .intro-section{
@@ -40,41 +88,79 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .middle-section{
     height:100vh;
     display: flex;
-    flex-direction:column;
     align-items: center;
     justify-content: center;
 }
 
+
+#item1 { grid-area: header; }
+#item2 { grid-area: left; }
+#item3 { grid-area: middle; }
+#item4 { grid-area: right; }
+#item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  align-items: center;
+  grid-template-areas: 
+    'header header header'
+    'left middle right'
+    'footer footer footer';
+}
+
+.grid-item {
+  text-align: center;
+  font-size:20px;
+  padding:0px 20px;
+  //border: 2px solid var(--tx--color); //For debug;
+}
+
+.imgBtn{
+    background-color:var(--bt--color);
+    font-size:40px;
+    color:var(--tx--color);
+}
+.imgBtn:hover{
+    color:var(--lk--color);
+}
+
+.slide-image {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg");
+  //background: yellow;
+  height: 60vh;
+  width: 60vh;
+  border: 2px solid var(--tx--color); 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .profile-section{
-    height:95%;
+    height:100vh;
     display: flex;
     flex-direction:column;
     align-items: center;
     justify-content: center;   
 }
+
 .profile-links {
-    background-color:black;
+    background-color:var(--bg--color);
     padding:5px;
 }
 .profile-links a{
     padding: 10px;
     transition: 0.5s;
-    //color:black;
+    font-size:20px;
+    color:var(--tx--color);
 }
 
 .profile-links a:hover{
-    color:cyan;
-}
-
-.dark-mode {
-  background-color: black;
-  color: white;
+    color:var(--lk--color);
 }
 
 </style>
@@ -92,7 +178,7 @@ a{
       <a href="#profile">Profile</a>
     </li>
     <li>
-      <button onclick="myFunction()">Toggle dark mode</button>
+      <button id="toggle-button" onclick="myFunction()">Dark</button>
     </li>
   </ul>
 </nav>
@@ -102,8 +188,20 @@ a{
 </section>
 
 <section id="middle" class="middle-section">
-    <h2>Middle bit goes here</h2>
-    <p> To add CSS grid here</p>
+
+<div class="grid-container">
+    <div id="item1" class="grid-item"> <h3>Middle</h3></div>
+    <div id="item2" class="grid-item">
+        <button class="imgBtn" id="backBtn"><</button>
+    </div>
+    <div id="item3" class="grid-item">
+            <div id="slide-image" class="slide-image"></div>
+    </div>
+    <div id="item4" class="grid-item">    
+        <button class="imgBtn" id="nextBtn">></button>
+    </div>
+    <div id="item5" class="grid-item"> <h4><code>Footer<code></h4></div>
+</div>
 </section>
 
 <section id="profile" class="profile-section">
@@ -116,14 +214,63 @@ a{
 </section>
 
 <footer>
-    <p> footer message goes here</p>
+    <p> Footer message goes here</p>
 </footer>
 
 <script>
 function myFunction() {
    var element = document.body;
    element.classList.toggle("dark-mode");
+   element = document.getElementById("toggle-button");
+    if (element.innerHTML=="Dark") element.innerHTML = "Light";
+    else element.innerHTML = "Dark";
 }
+ctlBtn ("hide","backBtn")
+var i=0;
+
+document.getElementById("nextBtn").addEventListener("click", function(){
+    
+     i++;
+    document.getElementById("slide-image").style.backgroundImage = 'url('+imageArray[i]+')';
+    checkIndex();
+    console.log(i);
+});
+document.getElementById("backBtn").addEventListener("click", function(){
+    
+    i--;
+    document.getElementById("slide-image").style.backgroundImage  = 'url('+imageArray[i]+')';
+    checkIndex();
+    console.log(i);
+});
+
+function checkIndex() {
+    if (i == imageArray.length-1) {
+        ctlBtn("hide","nextBtn")
+        } else {
+            ctlBtn("unhide","nextBtn")
+        }
+        if (i ==0) {
+            ctlBtn ("hide","backBtn")
+        } else{
+            ctlBtn ("unhide","backBtn")
+        }
+    };
+
+function ctlBtn(action, btn){
+    if (action=="hide") {
+        document.getElementById(btn).style.display = "none";
+    } 
+    if (action=="unhide"){
+    document.getElementById(btn).style.display = "block";
+    }
+}
+
+
+var imageArray = ["https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg","https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg","https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg","https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg"];
+
+//https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg
+
+
 </script>
 
 </body>
