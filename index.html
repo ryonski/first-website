@@ -242,7 +242,7 @@ function toggleMode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
    element = document.getElementById("toggle-button");
-   console.log(x);
+   //console.log(x);
    element.style.right = 20*x +"px";
    x=x*(-1);
     //element.style.left = 10 + "px";   
@@ -261,14 +261,14 @@ document.getElementById("nextBtn").addEventListener("click", function(){
      i++;
     document.getElementById("slide-image").style.backgroundImage = 'url('+imageArray[i]+')';
     checkIndex();
-    console.log(i);
+    //console.log(i);
 });
 document.getElementById("backBtn").addEventListener("click", function(){
     
     i--;
     document.getElementById("slide-image").style.backgroundImage  = 'url('+imageArray[i]+')';
     checkIndex();
-    console.log(i);
+    //console.log(i);
 });
 
 function checkIndex() {
