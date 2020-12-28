@@ -7,6 +7,8 @@
   --lk--color: blue;
   --bt--color: orange;
   --tg--color: black;
+  --nv--color: red;
+  --bd--color: gray;
 }
 .dark-mode {
   --bg--color: black;
@@ -14,6 +16,8 @@
   --lk--color: cyan;
   --bt--color: #333;
   --tg--color: purple;
+   --nv--color: black;
+   --bd--color: white;
 }
 body{
     background-color:var(--bg--color);
@@ -47,7 +51,10 @@ a{
   left: 0;
   width: 100%;
   height: 60px;
-  background: red;
+  background: var(--nv--color);
+  border-color: var(--bd--color);
+  border-bottom-style: solid;
+  border-width: 1px;
 }
 .tabs{
     display: flex;  
@@ -163,11 +170,12 @@ a{
   </ul>
 </nav>
 <section id="intro" class="intro-section">
-    <h1>My Intro goes here</h1>
+    <h1>Hi I am ryonski</h1>
+    <h2>More about me...</h2>
 </section>
 <section id="middle" class="middle-section">
 <div class="grid-container">
-    <div id="item1" class="grid-item"> <h3>Middle</h3></div>
+  <div id="item1" class="grid-item"> <h3>Why I am applying for the programme?</h3></div>
     <div id="item2" class="grid-item">
         <button class="imgBtn" id="backBtn"><</button>
     </div>
@@ -177,7 +185,7 @@ a{
     <div id="item4" class="grid-item">    
         <button class="imgBtn" id="nextBtn">></button>
     </div>
-    <div id="item5" class="grid-item"> <h4><code>Footer<code></h4></div>
+    <div id="item5" class="grid-item"> <h4><code>[Go to next slide]<code></h4></div>
 </div>
 </section>
 <section id="profile" class="profile-section">
