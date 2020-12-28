@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html>
 <style>
-
 :root {
   --bg--color: white; 
   --tx--color: black;
   --lk--color: blue;
   --bt--color: orange;
-  //--tg--color: 0, 0, 0;
-  --tg--color: black;
+  --tg--color: 0, 0, 0;
   --nv--color: red;
   --bd--color: gray;
 }
-
 .dark-mode {
   --bg--color: black;
   --tx--color: white;
   --lk--color: cyan;
   --bt--color: #333;
-  //--tg--color: 150, 0, 255;
-  --tg--color: purple;
+  --tg--color: 150, 0, 255;
   --nv--color: black;
   --bd--color: white;
 }
-
 body{
     background-color:var(--bg--color);
     color:var(--tx--color);
 }
-
 h1,h2,h3{
     font-family: courier;
     text-align:center;
@@ -37,21 +31,18 @@ h1,h2,h3{
 h1{
     font-size: 60px;
 }
-
 h2{
     font-size: 40px;
 }
 ul{
     list-style: none;
 }
-
 a{
     text-decoration: none;
     color:white;
     font-size: 30px;
     font-family: code;
 }
-
 .tab-bar{
   display: flex;
   position: fixed;
@@ -65,26 +56,21 @@ a{
   border-bottom-style: solid;
   border-width: 1px;
 }
-
 .tabs{
     display: flex;  
     align-items: center;  
 }
-
 .tabs a{
     diplay: flex;
     padding:12px;  
 }
-
 .tabs a:hover{
     background-color:teal;
 }
-
 .toggle-container{
     background-color:var(--nv--color);
     border-style:solid;
-    //border-color:rgba(var(--tg--color),0.4);
-    border-color: var(--tg--color);
+    border-color:rgba(var(--tg--color),0.4);
     border-width: 5px;
     border-radius:40%;
     margin: 50px;
@@ -94,36 +80,30 @@ a{
     color:yellow;
     padding: 5px 10px;
     border-radius:50%;
-    //background-color:rgb(var(--tg--color));
-    background-color: var(--tg--color;
+    background-color:rgb(var(--tg--color));
     position:relative;
     right: 15px;
     line-height: 15px;
     font-size: 20px;
 }
-
 .intro-section{
+    height:100vh;
     display: flex;
     flex-direction:column;
-    height:100vh;
     align-items: center;
     justify-content: center;
 }
-
 .middle-section{
     height:100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-
 #item1 { grid-area: header; }
 #item2 { grid-area: left; }
 #item3 { grid-area: middle; }
 #item4 { grid-area: right; }
 #item5 { grid-area: footer; }
-
 .grid-container {
   display: grid;
   align-items: center;
@@ -132,14 +112,12 @@ a{
     'left middle right'
     'footer footer footer';
 }
-
 .grid-item {
   text-align: center;
   font-size:20px;
   padding:0px 20px;
   //border: 2px solid var(--tx--color); //For debug;
 }
-
 .imgBtn{
     background-color:var(--bt--color);
     font-size:40px;
@@ -148,7 +126,6 @@ a{
 .imgBtn:hover{
     color:var(--lk--color);
 }
-
 .slide-image {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg");
   height: 60vh;
@@ -158,7 +135,6 @@ a{
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 .profile-section{
     height:100vh;
     display: flex;
@@ -166,7 +142,6 @@ a{
     align-items: center;
     justify-content: center;   
 }
-
 .profile-links {
     background-color:var(--bg--color);
     padding:5px;
@@ -177,13 +152,10 @@ a{
     font-size:20px;
     color:var(--tx--color);
 }
-
 .profile-links a:hover{
     color:var(--lk--color);
 }
-
 </style>
-
 <body>
 <nav class="tab-bar">
   <ul class="tabs">
@@ -202,30 +174,30 @@ a{
       
     </li>
   </ul>
-</nav>
+ </nav>
 
-<section id="intro" class="intro-section">
-    <h1>Hi I am ryonski</h1>
-    <h2><i>More about me...</i></h2>
-</section>
+ <section id="intro" class="intro-section">
+     <h1>Hi I am ryonski</h1>
+     <h2>More about me...</h2>
+ </section>
 
-<section id="middle" class="middle-section">
+ <section id="middle" class="middle-section">
 
-<div class="grid-container">
-    <div id="item1" class="grid-item"> <h3>Why am I applying for the Founders and Coders programme?</h3></div>
-    <div id="item2" class="grid-item">
-        <button class="imgBtn" id="backBtn"><</button>
-    </div>
+ <div class="grid-container">
+   
+     <div id="item1" class="grid-item"> <h3>My reasons for applying are...</h3></div>
+     <div id="item2" class="grid-item">
+         <button class="imgBtn" id="backBtn"><</button>
+     </div>
     <div id="item3" class="grid-item">
             <div id="slide-image" class="slide-image"></div>
     </div>
     <div id="item4" class="grid-item">    
         <button class="imgBtn" id="nextBtn">></button>
     </div>
-    <div id="item5" class="grid-item"> <h4><code><i>[Go to the next slide]<i><code></h4></div>
+    <div id="item5" class="grid-item"> <h4><code>Footer<code></h4></div>
 </div>
 </section>
-
 <section id="profile" class="profile-section">
     <h2>Profile links go here</h2>
     <div class="profile-links">
@@ -234,47 +206,40 @@ a{
         <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
     </div>
 </section>
-
 <footer>
     <p> Footer message goes here</p>
 </footer>
-
 <script>
-
 var x=-1;
 function toggleMode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
    element = document.getElementById("toggle-button");
-   //console.log(x);
+   console.log(x);
    element.style.right = 20*x +"px";
    x=x*(-1);
     //element.style.left = 10 + "px";   
    //console.log(element.innerHTML);
     if (element.innerHTML=="☽")
     element.innerHTML = "&#9788";
-
     else element.innerHTML = "&#9789";
 }
-
 ctlBtn ("hide","backBtn")
 var i=0;
-
 document.getElementById("nextBtn").addEventListener("click", function(){
     
      i++;
     document.getElementById("slide-image").style.backgroundImage = 'url('+imageArray[i]+')';
     checkIndex();
-    //console.log(i);
+    console.log(i);
 });
 document.getElementById("backBtn").addEventListener("click", function(){
     
     i--;
     document.getElementById("slide-image").style.backgroundImage  = 'url('+imageArray[i]+')';
     checkIndex();
-    //console.log(i);
+    console.log(i);
 });
-
 function checkIndex() {
     if (i == imageArray.length-1) {
         ctlBtn("hide","nextBtn")
@@ -287,7 +252,6 @@ function checkIndex() {
             ctlBtn ("unhide","backBtn")
         }
     };
-
 function ctlBtn(action, btn){
     if (action=="hide") {
         document.getElementById(btn).style.display = "none";
@@ -296,17 +260,10 @@ function ctlBtn(action, btn){
     document.getElementById(btn).style.display = "block";
     }
 }
-
-
 var imageArray = ["https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg",
                   "https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",
                   "https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",
                   "https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg"];
-
-
-
 </script>
-
 </body>
 </html>
-
