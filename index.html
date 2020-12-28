@@ -7,7 +7,7 @@
   --tx--color: black;
   --lk--color: blue;
   --bt--color: orange;
-  --tg--color: black;
+  --tg--color: 0, 0, 0;
   --nv--color: red;
   --bd--color: gray;
 }
@@ -17,7 +17,7 @@
   --tx--color: white;
   --lk--color: cyan;
   --bt--color: #333;
-  --tg--color: purple;
+  --tg--color: 150, 0, 255;
   --nv--color: black;
   --bd--color: white;
 }
@@ -78,19 +78,24 @@ a{
     background-color:teal;
 }
 
+.toggle-container{
+    background-color:var(--nv--color);
+    border-style:solid;
+    border-color:rgba(var(--tg--color),0.4);
+    border-width: 5px;
+    border-radius:40%;
+    margin: 50px;
+}
 #toggle-button{
     cursor: pointer;
     color:yellow;
     padding: 5px 10px;
-    border-radius:20%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size:25px;
-    margin: 35px;
-    background-color:var(--tg--color);
+    border-radius:50%;
+    background-color:rgb(var(--tg--color));
     position:relative;
-    right: -20px;
+    right: 15px;
+    line-height: 15px;
+    font-size: 20px;
 }
 
 .intro-section{
@@ -187,7 +192,8 @@ a{
       <a href="#profile">Profile</a>
     </li>
     <li>
-      <a href="#" id="toggle-button" onclick="toggleMode()">&#9789</a>
+      <div class="toggle-container">
+          <a href="" id="toggle-button" onclick="toggleMode()">&#9789</a></div>
       
     </li>
   </ul>
@@ -229,7 +235,7 @@ a{
 
 <script>
 
-var x=1;
+var x=-1;
 function toggleMode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
