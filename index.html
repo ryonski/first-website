@@ -7,7 +7,7 @@
   --tx--color: black;
   --lk--color: blue;
   --bt--color: orange;
-  --tg--color: darkgray;
+  --tg--color: black;
 }
 
 .dark-mode {
@@ -15,7 +15,7 @@
   --tx--color: white;
   --lk--color: cyan;
   --bt--color: #333;
-  --tg--color: yellow;
+  --tg--color: purple;
 }
 
 body{
@@ -73,14 +73,12 @@ a{
 
 #toggle-button{
     height:30px;
-    margin: 40px;
+    margin: 20px;
     border-radius:5px;
-    font-size:20px;
+    font-size:25px;
+    color:yellow;
+    border-radius:50%;
     background-color:var(--tg--color)
-}
-
-#toggle-button:hover{
-    color:blue;
 }
 
 .intro-section{
@@ -178,7 +176,7 @@ a{
       <a href="#profile">Profile</a>
     </li>
     <li>
-      <button id="toggle-button" onclick="myFunction()">Dark</button>
+      <button id="toggle-button" onclick="myFunction()">&#9789</button>
     </li>
   </ul>
 </nav>
@@ -222,8 +220,11 @@ function myFunction() {
    var element = document.body;
    element.classList.toggle("dark-mode");
    element = document.getElementById("toggle-button");
-    if (element.innerHTML=="Dark") element.innerHTML = "Light";
-    else element.innerHTML = "Dark";
+   console.log(element.innerHTML);
+    if (element.innerHTML=="☽")
+    element.innerHTML = "&#9788";
+
+    else element.innerHTML = "&#9789";
 }
 ctlBtn ("hide","backBtn")
 var i=0;
