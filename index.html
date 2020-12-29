@@ -86,6 +86,12 @@ a{
     position:relative;
     right: 10px;
 }
+
+#toggle-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .intro-section{
     height:100vh;
     display: flex;
@@ -169,7 +175,7 @@ a{
       <a href="#profile">Profile</a>
     </li>
     <li>
-      <a href="" id="toggle-button" onclick="toggleMode()">&#9789</a>
+      <button id="toggle-button" onclick="toggleMode()">&#9789</button>
       
     </li>
   </ul>
