@@ -6,7 +6,7 @@
   --tx--color: black;
   --lk--color: blue;
   --bt--color: orange;
-  --tg--color: black;
+  --tg--color: 0, 0, 0;
   --nv--color: red;
   --bd--color: gray;
 }
@@ -15,9 +15,9 @@
   --tx--color: white;
   --lk--color: cyan;
   --bt--color: #333;
-  --tg--color: purple;
-   --nv--color: black;
-   --bd--color: white;
+  --tg--color: 150, 0, 255;
+  --nv--color: black;
+  --bd--color: white;
 }
 body{
     background-color:var(--bg--color);
@@ -67,25 +67,25 @@ a{
 .tabs a:hover{
     background-color:teal;
 }
+.toggle-container{
+    background-color:var(--nv--color);
+    border-style:solid;
+    border-color:rgba(var(--tg--color),0.4);
+    border-width: 5px;
+    border-radius:40%;
+    margin: 50px;
+}
 #toggle-button{
-     background-color:var(--tg--color);
-     cursor: pointer;
-     color:yellow;
-     border-radius:50%;
-     padding: 5px 10px;
-     border-radius:50%;
-     border-style:none;
-     font-size:25px;
-     margin: 45px;
-     position:relative;
-     right: 15px;
-     border: none;
-     text-align: center;
-     text-decoration: none;
-     display: inline-block;
-     outline: none;
- }
-  
+    cursor: pointer;
+    color:yellow;
+    padding: 5px 10px;
+    border-radius:50%;
+    background-color:rgb(var(--tg--color));
+    position:relative;
+    right: 15px;
+    line-height: 15px;
+    font-size: 20px;
+}
 .intro-section{
     height:100vh;
     display: flex;
@@ -125,13 +125,12 @@ a{
 }
 .imgBtn:hover{
     color:var(--lk--color);
- }
-
- .slide-image {
-   background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg");
-   height: 60vh;
-   width: 60vh;
-   border: 2px solid var(--tx--color); 
+}
+.slide-image {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg");
+  height: 60vh;
+  width: 60vh;
+  border: 2px solid var(--tx--color); 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -170,27 +169,34 @@ a{
       <a href="#profile">Profile</a>
     </li>
     <li>
-      <button id="toggle-button" onclick="toggleMode()">&#9789</button>
+      <div class="toggle-container">
+          <button id="toggle-button" onclick="toggleMode()">&#9789</button>
+      </div>
+      
     </li>
   </ul>
-</nav>
-<section id="intro" class="intro-section">
-    <h1>Hi I am ryonski</h1>
-    <h2>More about me...</h2>
-</section>
-<section id="middle" class="middle-section">
-<div class="grid-container">
-  <div id="item1" class="grid-item"> <h3>Why I am applying for the programme?</h3></div>
-    <div id="item2" class="grid-item">
-        <button class="imgBtn" id="backBtn"><</button>
-    </div>
+ </nav>
+
+ <section id="intro" class="intro-section">
+     <h1>Hi I am ryonski</h1>
+     <h2>More about me...</h2>
+ </section>
+
+ <section id="middle" class="middle-section">
+
+ <div class="grid-container">
+   
+     <div id="item1" class="grid-item"> <h3>My reasons for applying are...</h3></div>
+     <div id="item2" class="grid-item">
+         <button class="imgBtn" id="backBtn"><</button>
+     </div>
     <div id="item3" class="grid-item">
             <div id="slide-image" class="slide-image"></div>
     </div>
     <div id="item4" class="grid-item">    
         <button class="imgBtn" id="nextBtn">></button>
     </div>
-    <div id="item5" class="grid-item"> <h4><code>[Go to next slide]<code></h4></div>
+    <div id="item5" class="grid-item"> <h4><code>Footer<code></h4></div>
 </div>
 </section>
 <section id="profile" class="profile-section">
@@ -205,15 +211,16 @@ a{
     <p> Footer message goes here</p>
 </footer>
 <script>
-  
 var x=-1;
 function toggleMode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
    element = document.getElementById("toggle-button");
-   //console.log(element.innerHTML);
+   console.log(x);
    element.style.right = 20*x +"px";
    x=x*(-1);
+    //element.style.left = 10 + "px";   
+   //console.log(element.innerHTML);
     if (element.innerHTML=="☽")
     element.innerHTML = "&#9788";
     else element.innerHTML = "&#9789";
@@ -261,3 +268,4 @@ var imageArray = ["https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitte
 </script>
 </body>
 </html>
+
