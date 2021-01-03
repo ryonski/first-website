@@ -1,5 +1,3 @@
-
-    
 <!DOCTYPE html>
 <html>
 <style>
@@ -12,7 +10,6 @@
    --nv--color: #cef;
    --bd--color: gray;
    --bx--shadow: 15px 0px 0px gray;
-   --tg--left: -10px;
  }
 
  .dark-mode {
@@ -23,8 +20,7 @@
    --tg--color: purple;
    --nv--color: black;
    --bd--color: white;
-   --bx--shadow: -15px 0px 0px gray;
-   --tg--left: 10px;
+   --bx--shadow: -10px 0px 0px gray;
  }
 
  body{
@@ -52,26 +48,26 @@ a{
     font-family: code;
 }
 .tab-bar{
-    position: fixed;
-    display: flex;
-    justify-content: flex-end;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 60px;
-    background: var(--nv--color);
-    border-color: var(--bd--color);
-    border-bottom-style: solid;
-    border-width: 1px;
+  display: flex;
+  position: fixed;
+  justify-content: flex-end; 
+  top: 0;
+   left: 0;
+   width: 100%;
+   height: 60px;
+   background: red;
+   background: var(--nv--color);
+   border-color: var(--bd--color);
+   border-bottom-style: solid;
+   border-width: 1px;
  }
 
  .tabs{
-    display: flex;
-    top: 0px;
-    left: 0px;  
+    display: flex;  
     align-items: center;  
 }
 .tabs a{
+    diplay: flex;
     padding:12px;  
 }
 .tabs a:hover{
@@ -88,8 +84,7 @@ a{
     margin: 50px;
     background-color:var(--tg--color);
     position:relative;
-    left: var(--tg--left);
-    top:0px;
+    right: 10px;
     border:none;
     outline: none;
 }
@@ -163,21 +158,10 @@ a{
     transition: 0.5s;
     font-size:20px;
     color:var(--tx--color);
-    border-bottom:solid orange;
-    border-width:0px;
 }
 .profile-links a:hover{
     color:var(--lk--color);
-    border-width:2px;
 }
-    
-/* not sure why this is not working properly
-    
-.profile-links a:visited{
-    color:gray;
-}
-*/
-    
 </style>
 <body>
 <nav class="tab-bar">
@@ -199,7 +183,7 @@ a{
 </nav>
 <section id="intro" class="intro-section">
     <h1>Hi I'm ryonski</h1>
-    <h2> More about me...</h2>
+    <h2> More about me...(tbc)</h2>
 </section>
 <section id="middle" class="middle-section">
 <div class="grid-container">
@@ -228,11 +212,16 @@ a{
     <p> Footer message goes here</p>
 </footer>
 <script>
-
+var x=-1;
 function toggleMode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
    element = document.getElementById("toggle-button");
+   console.log(x);
+   element.style.right = 20*x +"px";
+   x=x*(-1);
+    //element.style.left = 10 + "px";   
+   //console.log(element.innerHTML);
     if (element.innerHTML=="☽")
     element.innerHTML = "&#9788";
     else element.innerHTML = "&#9789";
