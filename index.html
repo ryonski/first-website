@@ -137,7 +137,7 @@ a{
     color:var(--lk--color);
 }
 .slide-image {
- background-image: url("https://github.com/ryonski/first-website/blob/main/images/thinking.jpg?raw=true");
+  background-image: url("https://github.com/ryonski/first-website/blob/main/images/thinking.jpg?raw=true");
   height: 60vh;
   width: 50vh;
   border: 2px solid var(--tx--color); 
@@ -201,7 +201,7 @@ a{
 </section>
 <section id="middle" class="middle-section">
 <div class="grid-container">
-    <div id="item1" class="grid-item"> <h3>My reasons for applying are...</h3></div>
+    <div id="item1" class="grid-item"> <h3>Why do I want to join the programme?</h3></div>
     <div id="item2" class="grid-item">
         <button class="imgBtn" id="backBtn"><</button>
     </div>
@@ -211,7 +211,7 @@ a{
     <div id="item4" class="grid-item">    
         <button class="imgBtn" id="nextBtn">></button>
     </div>
-    <div id="item5" class="grid-item"> <h4><code>Footer</code></h4></div>
+    <div id="item5" class="grid-item"> <h4><i><code>click on next to find out</code></i></h4></div>
 </div>
 </section>
 <section id="profile" class="profile-section">
@@ -227,11 +227,18 @@ a{
 </footer>
 <script>
 
+
+
 var images = {
-    img1:{src:"https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg",caption:"Kitten"},
-    img2:{src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel"},
-    img3:{src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Crane"},
-	img4:{src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Monkeys"}
+    
+    img1:{name:"Kitten", title:"Cats??", src:"https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg", caption:"Kitten", height: "60vh", width: "70vh"},
+    
+    img2:{name:"Aerogel",title:"Creativity", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
+    
+    img3:{name:"Heron", title:"Mastery",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Crane", height: "70vh", width: "50vh"},
+
+	img4:{name:"Monkeys", title:"Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Monkeys", height: "60vh", width: "80vh"}
+
 }
 
 function toggleMode() {
@@ -244,13 +251,16 @@ function toggleMode() {
 }
 
 ctlBtn ("hide","backBtn")
-
 var i=0;
 
 document.getElementById("nextBtn").addEventListener("click", function(){
     i++;
     document.getElementById("slide-image").style.backgroundImage = 'url('+images['img'+i].src+')';
     document.getElementById("item5").innerHTML= images['img'+i].caption+" => img"+i;
+    document.getElementById("item1").innerHTML= images['img'+i].title;
+    document.getElementById("slide-image").style.height = images['img'+i].height;
+    document.getElementById("slide-image").style.width = images['img'+i].width;
+    
     checkIndex();
     });
     
@@ -258,6 +268,10 @@ document.getElementById("backBtn").addEventListener("click", function(){
     i--;
     document.getElementById("slide-image").style.backgroundImage = 'url('+images['img'+i].src+')';
     document.getElementById("item5").innerHTML= images['img'+i].caption+" => img"+i;
+    document.getElementById("item1").innerHTML= images['img'+i].title;
+    document.getElementById("slide-image").style.height = images['img'+i].height;
+    document.getElementById("slide-image").style.width = images['img'+i].width
+    
     checkIndex();
     });
 
