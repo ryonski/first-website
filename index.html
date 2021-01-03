@@ -33,10 +33,8 @@ h1,h2,h3{
     font-family: courier;
     text-align:center;
 }
-h4{
+h3,h4{
     font-family: fantasy;
-    font-size:30px;
-    font-style:italic;
 }
     
 h1{
@@ -44,6 +42,12 @@ h1{
 }
 h2{
     font-size: 40px;
+}
+h3{
+    font-size: 30px;
+}
+h4{
+    font-size: 20px;
 }
 ul{
     list-style: none;
@@ -209,7 +213,7 @@ a{
 
 <section id="middle" class="middle-section">
 <div class="grid-container">
-    <h3 id="item1" class="grid-item"> Why I want to join the programme?</h3>
+    <div id="item1" class="grid-item"><h3> Why I want to join the programme?</h3></div>
     <div id="item2" class="grid-item">
         <button class="imgBtn" id="backBtn"><</button>
     </div>
@@ -219,7 +223,7 @@ a{
     <div id="item4" class="grid-item">    
         <button class="imgBtn" id="nextBtn">></button>
     </div>
-    <h4 id="item5" class="grid-item"> Click on next to find out</h4>
+    <div id="item5" class="grid-item"><h4> Click on next to find out</h4></div>
 </div>
 </section>
 
@@ -240,13 +244,13 @@ a{
 
 var images = {
     
-    img1:{name:"Kitten", title:"For The Love Of Cats?", src:"https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg", caption:"Kitten", height: "60vh", width: "70vh"},
+    img4:{name:"Cats", title:"For The Love Of Cats?", src:"https://github.com/ryonski/first-website/blob/main/images/cats.jpg?raw=true", caption:"Happy New Year", height: "40vh", width: "70vh"},
     
-    img2:{name:"Aerogel",title:"To Build Amazing Things", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
+    img1:{name:"Aerogel",title:"Create Amazing Things", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
     
-    img3:{name:"Heron", title:"To Become A Master",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Gray Heron", height: "70vh", width: "50vh"},
+    img3:{name:"Heron", title:"Learn From The Master",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Gray Heron", height: "70vh", width: "50vh"},
 
-	img4:{name:"Monkeys", title:"And To Make New Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Monkeys", height: "60vh", width: "80vh"}
+	img2:{name:"Monkeys", title:"Make New Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Monkeys", height: "60vh", width: "80vh"}
 
 }
 
