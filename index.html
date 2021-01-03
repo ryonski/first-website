@@ -262,25 +262,22 @@ var i=0;
 
 document.getElementById("nextBtn").addEventListener("click", function(){
     i++;
+    updateSlide()
+    });
+    
+document.getElementById("backBtn").addEventListener("click", function(){
+    i--;
+    updateSlide()
+    });
+    
+function updateSlide(){
     document.getElementById("slide-image").style.backgroundImage = 'url('+images['img'+i].src+')';
     document.getElementById("item5").innerHTML= images['img'+i].caption+" => img"+i;
     document.getElementById("item1").innerHTML= images['img'+i].title;
     document.getElementById("slide-image").style.height = images['img'+i].height;
     document.getElementById("slide-image").style.width = images['img'+i].width;
+    checkIndex()};
     
-    checkIndex();
-    });
-    
-document.getElementById("backBtn").addEventListener("click", function(){
-    i--;
-    document.getElementById("slide-image").style.backgroundImage = 'url('+images['img'+i].src+')';
-    document.getElementById("item5").innerHTML= images['img'+i].caption+" => img"+i;
-    document.getElementById("item1").innerHTML= images['img'+i].title;
-    document.getElementById("slide-image").style.height = images['img'+i].height;
-    document.getElementById("slide-image").style.width = images['img'+i].width
-    
-    checkIndex();
-    });
 
 function checkIndex() {
     if (i == Object.keys(images).length) {
@@ -302,7 +299,6 @@ function ctlBtn(action, btn){
     document.getElementById(btn).style.display = "block";
     }
 }
-
 
 
 </script>
