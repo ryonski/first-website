@@ -1,5 +1,3 @@
-
-    
 <!DOCTYPE html>
 <html>
 <style>
@@ -139,7 +137,7 @@ a{
     color:var(--lk--color);
 }
 .slide-image {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg");
+  background-image: url("first-website/images/thinking.jpg");
   height: 60vh;
   width: 60vh;
   border: 2px solid var(--tx--color); 
@@ -199,7 +197,7 @@ a{
 </nav>
 <section id="intro" class="intro-section">
     <h1>Hi I'm ryonski</h1>
-    <h2> More about me...[previous commit]</h2>
+    <h2> More about me...</h2>
 </section>
 <section id="middle" class="middle-section">
 <div class="grid-container">
@@ -213,7 +211,7 @@ a{
     <div id="item4" class="grid-item">    
         <button class="imgBtn" id="nextBtn">></button>
     </div>
-    <div id="item5" class="grid-item"> <h4><code>Footer<code></h4></div>
+    <div id="item5" class="grid-item"> <h4><code>Footer</code></h4></div>
 </div>
 </section>
 <section id="profile" class="profile-section">
@@ -229,6 +227,13 @@ a{
 </footer>
 <script>
 
+var images = {
+    img1:{src:"https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg",caption:"Kitten"},
+    img2:{src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel"},
+    img3:{src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Crane"},
+	img4:{src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Monkeys"}
+}
+
 function toggleMode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
@@ -237,29 +242,32 @@ function toggleMode() {
     element.innerHTML = "&#9788";
     else element.innerHTML = "&#9789";
 }
+
 ctlBtn ("hide","backBtn")
+
 var i=0;
+
 document.getElementById("nextBtn").addEventListener("click", function(){
-    
-     i++;
-    document.getElementById("slide-image").style.backgroundImage = 'url('+imageArray[i]+')';
+    i++;
+    document.getElementById("slide-image").style.backgroundImage = 'url('+images['img'+i].src+')';
+    document.getElementById("item5").innerHTML= images['img'+i].caption+" => img"+i;
     checkIndex();
-    console.log(i);
-});
+    });
+    
 document.getElementById("backBtn").addEventListener("click", function(){
-    
     i--;
-    document.getElementById("slide-image").style.backgroundImage  = 'url('+imageArray[i]+')';
+    document.getElementById("slide-image").style.backgroundImage = 'url('+images['img'+i].src+')';
+    document.getElementById("item5").innerHTML= images['img'+i].caption+" => img"+i;
     checkIndex();
-    console.log(i);
-});
+    });
+
 function checkIndex() {
-    if (i == imageArray.length-1) {
+    if (i == Object.keys(images).length) {
         ctlBtn("hide","nextBtn")
         } else {
             ctlBtn("unhide","nextBtn")
         }
-        if (i ==0) {
+        if (i ==1) {
             ctlBtn ("hide","backBtn")
         } else{
             ctlBtn ("unhide","backBtn")
@@ -273,10 +281,9 @@ function ctlBtn(action, btn){
     document.getElementById(btn).style.display = "block";
     }
 }
-var imageArray = ["https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg",
-                  "https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",
-                  "https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",
-                  "https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg"];
+
+
+
 </script>
 </body>
 </html>
