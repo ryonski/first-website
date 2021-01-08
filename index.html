@@ -178,6 +178,10 @@ img{
     width: 50%;
 }
 
+img:hover {
+  transform: scaleX(-1);
+}
+
 .profile-links {
     background-color:var(--bg--color);
     padding:5px;
@@ -189,12 +193,12 @@ img{
     transition: 0.5s;
     font-size:20px;
     color:var(--tx--color);
-    border-bottom:solid orange;
-    border-width:0px;
+    border-width:2px;
+    border-bottom:solid transparent;
 }
 .profile-links a:hover{
     color:var(--lk--color);
-    border-width:2px;
+    border-bottom:solid darkorange;
 }
     
 /* not sure why this is not working properly
