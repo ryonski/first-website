@@ -166,10 +166,23 @@ a{
     flex-direction:column;
     align-items: center;
     justify-content: center;   
+
 }
+img{
+    border: 2px solid var(--tx--color); 
+    border-radius: 8px;
+    width:30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .profile-links {
     background-color:var(--bg--color);
     padding:5px;
+    align-items: center;
+    justify-content: center; 
 }
 .profile-links a{
     padding: 10px;
@@ -232,7 +245,9 @@ a{
 </section>
 
 <section id="profile" class="profile-section">
-    <h2>Profile links go here</h2>
+    <div><h2>Profile links</h2></div>
+    <div class="profile-image"><img src="https://github.com/ryonski/first-website/blob/main/images/kiwi.png?raw=true" alt=Kiwi></div>
+    <br>
     <div class="profile-links">
         <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
         <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
