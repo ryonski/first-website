@@ -166,22 +166,39 @@ a{
     flex-direction:column;
     align-items: center;
     justify-content: center;   
+
 }
+img{
+    border: 2px solid var(--tx--color); 
+    border-radius: 8px;
+    width:30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+img:hover {
+  transform: scaleX(-1);
+}
+
 .profile-links {
     background-color:var(--bg--color);
     padding:5px;
+    align-items: center;
+    justify-content: center; 
 }
 .profile-links a{
     padding: 10px;
     transition: 0.5s;
     font-size:20px;
     color:var(--tx--color);
-    border-bottom:solid orange;
-    border-width:0px;
+    border-width:2px;
+    border-bottom:solid transparent;
 }
 .profile-links a:hover{
     color:var(--lk--color);
-    border-width:2px;
+    border-bottom:solid darkorange;
 }
     
 /* not sure why this is not working properly
@@ -232,7 +249,9 @@ a{
 </section>
 
 <section id="profile" class="profile-section">
-    <h2>Profile links go here</h2>
+    <div><h2>Profile links</h2></div>
+    <div class="profile-image"><img src="https://github.com/ryonski/first-website/blob/main/images/kiwi.png?raw=true" alt=Kiwi></div>
+    <br>
     <div class="profile-links">
         <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
         <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
