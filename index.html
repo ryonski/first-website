@@ -1,5 +1,3 @@
-
-    
 <!DOCTYPE html>
 <html>
 <style>
@@ -30,21 +28,25 @@
  body{
     background-color:var(--bg--color);
     color:var(--tx--color);
+    transition:2s;
 }
+
 h1,h2,h3{
     font-family: courier;
     text-align:center;
 }
-    
-h1{
-    font-size: 60px;
-}
-h2{
-    font-size: 40px;
-}
+
+h3,h4{font-family: fantasy;}
+
+h1{font-size: 60px;}
+h2{font-size: 40px;}
+h3{font-size: 30px;}
+h4{font-size: 20px;}
+
 ul{
     list-style: none;
 }
+
 a{
     text-decoration: none;
     color: var(--tx--color);
@@ -72,7 +74,8 @@ a{
     align-items: center;  
 }
 .tabs a{
-    padding:12px;  
+    padding:12px;
+    transition:1s;
 }
 .tabs a:hover{
     background-color:teal;
@@ -92,6 +95,7 @@ a{
     top:0px;
     border:none;
     outline: none;
+    transition:1s;
 }
 
 #toggle-button:focus {
@@ -110,15 +114,21 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding:30px;
 }
-#item1 { grid-area: header; }
+#item1 { grid-area: header; 
+        font-size: 30px;
+        font-family:copperplate,fantasy;
+}
 #item2 { grid-area: left; }
 #item3 { grid-area: middle; }
 #item4 { grid-area: right; }
 #item5 { grid-area: footer; }
+
 .grid-container {
   display: grid;
   align-items: center;
+  height:90vh;
   grid-template-areas: 
     'header header header'
     'left middle right'
@@ -128,20 +138,21 @@ a{
   text-align: center;
   font-size:20px;
   padding:0px 20px;
-  //border: 2px solid var(--tx--color); //For debug;
+ 
 }
 .imgBtn{
     background-color:var(--bt--color);
     font-size:40px;
     color:var(--tx--color);
+    cursor:pointer;
 }
 .imgBtn:hover{
     color:var(--lk--color);
 }
 .slide-image {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg");
+  background-image: url("https://github.com/ryonski/first-website/blob/main/images/thinking.jpg?raw=true");
   height: 60vh;
-  width: 60vh;
+  width: 50vh;
   border: 2px solid var(--tx--color); 
   background-position: center;
   background-repeat: no-repeat;
@@ -153,22 +164,39 @@ a{
     flex-direction:column;
     align-items: center;
     justify-content: center;   
+
 }
+img{
+    border: 2px solid var(--tx--color); 
+    border-radius: 8px;
+    width:30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+img:hover {
+  transform: scaleX(-1);
+}
+
 .profile-links {
     background-color:var(--bg--color);
     padding:5px;
+    align-items: center;
+    justify-content: center; 
 }
 .profile-links a{
     padding: 10px;
     transition: 0.5s;
     font-size:20px;
     color:var(--tx--color);
-    border-bottom:solid orange;
-    border-width:0px;
+    border-width:2px;
+    border-bottom:solid transparent;
 }
 .profile-links a:hover{
     color:var(--lk--color);
-    border-width:2px;
+    border-bottom:solid darkorange;
 }
     
 /* not sure why this is not working properly
@@ -199,11 +227,12 @@ a{
 </nav>
 <section id="intro" class="intro-section">
     <h1>Hi I'm ryonski</h1>
-    <h2> More about me...[to update]</h2>
+    <h2> More about me...</h2>
 </section>
+
 <section id="middle" class="middle-section">
 <div class="grid-container">
-    <div id="item1" class="grid-item"> <h3>My reasons for applying are...</h3></div>
+    <div id="item1" class="grid-item"><h3>Why I want to join the programme?</h3></div>
     <div id="item2" class="grid-item">
         <button class="imgBtn" id="backBtn"><</button>
     </div>
@@ -213,11 +242,14 @@ a{
     <div id="item4" class="grid-item">    
         <button class="imgBtn" id="nextBtn">></button>
     </div>
-    <div id="item5" class="grid-item"> <h4><code>Footer<code></h4></div>
+    <div id="item5" class="grid-item"><h4> Click on next to find out</h4></div>
 </div>
 </section>
+
 <section id="profile" class="profile-section">
-    <h2>Profile links go here</h2>
+    <div><h2>Profile links</h2></div>
+    <div class="profile-image"><img src="https://github.com/ryonski/first-website/blob/main/images/kiwi.png?raw=true" alt=Kiwi></div>
+    <br>
     <div class="profile-links">
         <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
         <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
@@ -229,6 +261,20 @@ a{
 </footer>
 <script>
 
+
+
+var images = {
+    
+    img4:{name:"Cats", title:"And Because Katas Are Fun", src:"https://github.com/ryonski/first-website/blob/main/images/cats.jpg?raw=true", caption:"New Year Celebrations", height: "50vh", width: "80vh"},
+    
+    img3:{name:"Aerogel",title:"Create Amazing Things", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
+    
+    img1:{name:"Heron", title:"To Learn From The Masters",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Gray Heron", height: "70vh", width: "50vh"},
+
+	img2:{name:"Monkeys", title:"Make New Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Hot spring", height: "60vh", width: "80vh"}
+
+}
+
 function toggleMode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
@@ -237,29 +283,36 @@ function toggleMode() {
     element.innerHTML = "&#9788";
     else element.innerHTML = "&#9789";
 }
+
 ctlBtn ("hide","backBtn")
 var i=0;
+
 document.getElementById("nextBtn").addEventListener("click", function(){
+    i++;
+    updateSlide()
+    });
     
-     i++;
-    document.getElementById("slide-image").style.backgroundImage = 'url('+imageArray[i]+')';
-    checkIndex();
-    console.log(i);
-});
 document.getElementById("backBtn").addEventListener("click", function(){
-    
     i--;
-    document.getElementById("slide-image").style.backgroundImage  = 'url('+imageArray[i]+')';
-    checkIndex();
-    console.log(i);
-});
+    updateSlide()
+    });
+    
+function updateSlide(){
+    document.getElementById("slide-image").style.backgroundImage = 'url('+images['img'+i].src+')';
+    document.getElementById("item5").innerHTML= images['img'+i].caption+" => img"+i;
+    document.getElementById("item1").innerHTML= images['img'+i].title;
+    document.getElementById("slide-image").style.height = images['img'+i].height;
+    document.getElementById("slide-image").style.width = images['img'+i].width;
+    checkIndex()};
+    
+
 function checkIndex() {
-    if (i == imageArray.length-1) {
+    if (i == Object.keys(images).length) {
         ctlBtn("hide","nextBtn")
         } else {
             ctlBtn("unhide","nextBtn")
         }
-        if (i ==0) {
+        if (i ==1) {
             ctlBtn ("hide","backBtn")
         } else{
             ctlBtn ("unhide","backBtn")
@@ -273,10 +326,8 @@ function ctlBtn(action, btn){
     document.getElementById(btn).style.display = "block";
     }
 }
-var imageArray = ["https://upload.wikimedia.org/wikipedia/commons/a/a5/Red_Kitten_01.jpg",
-                  "https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",
-                  "https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",
-                  "https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg"];
+
+
 </script>
 </body>
 </html>
