@@ -28,30 +28,25 @@
  body{
     background-color:var(--bg--color);
     color:var(--tx--color);
+    transition:2s;
 }
+
 h1,h2,h3{
     font-family: courier;
     text-align:center;
 }
-h3,h4{
-    font-family: fantasy;
-}
-    
-h1{
-    font-size: 60px;
-}
-h2{
-    font-size: 40px;
-}
-h3{
-    font-size: 30px;
-}
-h4{
-    font-size: 20px;
-}
+
+h3,h4{font-family: fantasy;}
+
+h1{font-size: 60px;}
+h2{font-size: 40px;}
+h3{font-size: 30px;}
+h4{font-size: 20px;}
+
 ul{
     list-style: none;
 }
+
 a{
     text-decoration: none;
     color: var(--tx--color);
@@ -79,7 +74,8 @@ a{
     align-items: center;  
 }
 .tabs a{
-    padding:12px;  
+    padding:12px;
+    transition:1s;
 }
 .tabs a:hover{
     background-color:teal;
@@ -99,6 +95,7 @@ a{
     top:0px;
     border:none;
     outline: none;
+    transition:1s;
 }
 
 #toggle-button:focus {
@@ -147,6 +144,7 @@ a{
     background-color:var(--bt--color);
     font-size:40px;
     color:var(--tx--color);
+    cursor:pointer;
 }
 .imgBtn:hover{
     color:var(--lk--color);
@@ -187,6 +185,7 @@ img:hover {
     padding:5px;
     align-items: center;
     justify-content: center; 
+    transition:2s;
 }
 .profile-links a{
     padding: 10px;
