@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <style>
+
 :root {
   --bg--color: white; 
   --tx--color: black;
@@ -25,7 +26,7 @@
    --tg--left: 10px;
  }
 
- body{
+body{
     background-color:var(--bg--color);
     color:var(--tx--color);
     transition:1s;
@@ -43,9 +44,7 @@ h2{font-size: 40px;}
 h3{font-size: 30px;}
 h4{font-size: 20px;}
 
-ul{
-    list-style: none;
-}
+ul{list-style: none;}
 
 a{
     text-decoration: none;
@@ -53,6 +52,7 @@ a{
     font-size: 30px;
     font-family: code;
 }
+
 .tab-bar{
     position: fixed;
     display: flex;
@@ -74,13 +74,25 @@ a{
     left: 0px;  
     align-items: center;  
 }
+
 .tabs a{
     padding:12px;
     transition:1s;
 }
+
 .tabs a:hover{
     background-color:teal;
 }
+
+.active-tab-link{
+    bottom-border: 2px solid black
+    
+}
+
+.active-tab-link a{
+    color black !important;
+}
+
 #toggle-button{
     cursor: pointer;
     color:yellow;
@@ -110,6 +122,7 @@ a{
     align-items: center;
     justify-content: center;
 }
+
 .middle-section{
     height:100vh;
     display: flex;
@@ -117,6 +130,7 @@ a{
     justify-content: center;
     padding:30px;
 }
+
 #item1 { grid-area: header; 
         font-size: 30px;
         font-family:copperplate,fantasy;
@@ -135,12 +149,14 @@ a{
     'left middle right'
     'footer footer footer';
 }
+
 .grid-item {
   text-align: center;
   font-size:20px;
   padding:0px 20px;
  
 }
+
 .imgBtn{
     background-color:var(--bt--color);
     font-size:40px;
@@ -148,9 +164,11 @@ a{
     cursor:pointer;
     transition:1s;
 }
+
 .imgBtn:hover{
     color:var(--lk--color);
 }
+
 .slide-image {
   background-image: url("https://github.com/ryonski/first-website/blob/main/images/thinking.jpg?raw=true");
   height: 60vh;
@@ -202,14 +220,8 @@ img:hover {
     border-bottom:solid darkorange;
 }
     
-/* not sure why this is not working properly
-    
-.profile-links a:visited{
-    color:gray;
-}
-*/
-    
 </style>
+
 <body>
 <nav class="tab-bar">
   <ul class="tabs">
@@ -251,7 +263,7 @@ img:hover {
 
 <section id="profile" class="profile-section">
     <div><h2>Profile links</h2></div>
-    <div class="profile-image"><img src="https://github.com/ryonski/first-website/blob/main/images/kiwi.png?raw=true" alt=Kiwi></div>
+    <div class="profile-image"><img src="/images/kiwi.png?raw=true" alt=Kiwi></div>
     <br>
     <div class="profile-links">
         <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
@@ -262,12 +274,10 @@ img:hover {
 <footer>
     <p> Footer message goes here</p>
 </footer>
+</body>
+
 <script>
-
-
-
 var images = {
-    
     img4:{name:"Cats", title:"And Because Katas Are Fun", src:"https://github.com/ryonski/first-website/blob/main/images/cats.jpg?raw=true", caption:"New Year Celebrations", height: "50vh", width: "80vh"},
     
     img3:{name:"Aerogel",title:"Create Amazing Things", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
@@ -275,7 +285,6 @@ var images = {
     img1:{name:"Heron", title:"To Learn From The Masters",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Gray Heron", height: "70vh", width: "50vh"},
 
 	img2:{name:"Monkeys", title:"Make New Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Hot spring", height: "60vh", width: "80vh"}
-
 }
 
 function toggleMode() {
@@ -308,7 +317,6 @@ function updateSlide(){
     document.getElementById("slide-image").style.width = images['img'+i].width;
     checkIndex()};
     
-
 function checkIndex() {
     if (i == Object.keys(images).length) {
         ctlBtn("hide","nextBtn")
@@ -321,6 +329,7 @@ function checkIndex() {
             ctlBtn ("unhide","backBtn")
         }
     };
+    
 function ctlBtn(action, btn){
     if (action=="hide") {
         document.getElementById(btn).style.display = "none";
@@ -330,7 +339,5 @@ function ctlBtn(action, btn){
     }
 }
 
-
 </script>
-</body>
 </html>
