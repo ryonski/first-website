@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
 <style>
 
 :root {
-  --bg--color: white; 
+  --bg--color: lightgray;
   --tx--color: black;
    --lk--color: blue;
    --bt--color: orange;
@@ -11,7 +9,7 @@
    --nv--color: #cef;
    --bd--color: gray;
    --bx--shadow: 15px 0px 0px gray;
-   --tg--left: -10px;
+   --tg--right: 60px;
  }
 
  .dark-mode {
@@ -23,107 +21,27 @@
    --nv--color: black;
    --bd--color: white;
    --bx--shadow: -15px 0px 0px gray;
-   --tg--left: 10px;
+   --tg--right: 40px;
  }
 
 body{
     background-color:var(--bg--color);
     color:var(--tx--color);
+    font-family: sans-serif;
     transition:1s;
 }
 
-h1,h2,h3{
-    font-family: courier;
-    text-align:center;
-}
+/* Page settings */
 
-h3,h4{font-family: fantasy;}
-
-h1{font-size: 60px;}
-h2{font-size: 40px;}
-h3{font-size: 30px;}
-h4{font-size: 20px;}
-
-ul{list-style: none;}
-
-a{
-    text-decoration: none;
-    color: var(--tx--color);
-    font-size: 30px;
-    font-family: code;
-}
-
-.tab-bar{
-    position: fixed;
-    display: flex;
-    justify-content: flex-end;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 60px;
-    background: var(--nv--color);
-    border-color: var(--bd--color);
-    border-bottom-style: solid;
-    border-width: 1px;
-    transition:1s;
- }
-
- .tabs{
-    display: flex;
-    top: 0px;
-    left: 0px;  
-    align-items: center;  
-}
-
-.tabs a{
-    padding:12px;
-    transition:1s;
-}
-
-.tabs a:hover{
-    background-color:teal;
-}
-
-.active-tab-link{
-    bottom-border: 2px solid black
-    
-}
-
-.active-tab-link a{
-    color black !important;
-}
-
-#toggle-button{
-    cursor: pointer;
-    color:yellow;
-    padding: 5px 10px;
-    border-radius:40%;
-    box-shadow: var(--bx--shadow);
-    text-align: center;
-    font-size:25px;
-    margin: 50px;
-    background-color:var(--tg--color);
-    position:relative;
-    left: var(--tg--left);
-    top:0px;
-    border:none;
-    outline: none;
-    transition:0.5s;
-}
-
-#toggle-button:focus {
-  outline: none;
-}
-
-.intro-section{
+.about-page{
     height:100vh;
     display: flex;
-    flex-direction:column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top:60px;
 }
 
-.middle-section{
+.why-page{
     height:100vh;
     display: flex;
     align-items: center;
@@ -131,30 +49,200 @@ a{
     padding:30px;
 }
 
-#item1 { grid-area: header; 
-        font-size: 30px;
-        font-family:copperplate,fantasy;
+/* Nav bar Section */
+a{
+    text-decoration: none;
+    color: var(--tx--color);
+    font-size: 30px;
 }
-#item2 { grid-area: left; }
-#item3 { grid-area: middle; }
-#item4 { grid-area: right; }
-#item5 { grid-area: footer; }
+
+.tab-bar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background: var(--nv--color);
+    border-bottom: 2px solid var(--bd--color);
+    transition:1s;
+ }
+
+
+.tabs a{
+    float:left;
+    display:block;
+    transition:1s;
+    padding: 14px 16px;
+    text-align: center;
+
+
+}
+
+.tabs a:hover{
+    background-color:teal;
+}
+
+#toggle-button{
+    float:right;
+    cursor: pointer;
+    color:yellow;
+    border-radius:40%;
+    box-shadow: var(--bx--shadow);
+    background-color:var(--tg--color);
+    border:none;
+    outline: none;
+    transition:0.5s;
+    margin-right:var(--tg--right);
+    font-size:25px;
+    padding: 6px 10px;
+    margin-top: 8px;
+}
+
+
+/* Profile Section */
+.about-page {
+  display: flex;        /* Flex layout so items have equal height  */
+  flex-flow: row wrap;  /* Allow items to wrap into multiple lines */
+  /*border:2px solid black; /*for demo*/
+}
+
+.left-container{
+    width:50%;
+    display:flex;
+    flex-flow:column;
+    /*border:2px solid blue; /*for demo*/
+    padding:10px;
+}
+
+.right-container{
+    width:45%;
+    display:flex;
+    flex-flow:column;
+    justify-content:center;
+    /*border:2px solid red; /*for demo*/
+}
+
+.profile-image img{
+    width:100%;
+}
+
+.profile-links-wrapper{
+    display:flex;
+    flex-flow:row;
+    align-items:center;
+    background-color: var(--nv--color);
+    transition:1s;
+    padding:10px;
+}
+
+.profile-links {
+    background-color:var(--nv--color);
+    padding:5px;
+    transition:1s;
+    order:0;
+}
+
+.profile-links a{
+    padding: 10px;
+    transition: 0.5s;
+    font-size:20px;
+    color:var(--tx--color);
+    border:3px solid transparent;
+}
+
+.profile-links a:hover{
+    color:var(--lk--color);
+    border-bottom:3px solid darkorange;
+}
+
+
+#avatar{
+    width:80px;
+    height:80px;
+    margin-left:0;
+    animation: kiwi 10s infinite;
+}
+
+@keyframes kiwi {
+    0% {transform:scaleX(1); margin-left:0;}
+    1% {transform:scaleX(-1); margin-left:0;}
+    30% {opacity:1;}
+    50% {transform:scaleX(-1); margin-left:80;opacity:0;}
+    51% {transform:scaleX(1); margin-left:80;opacity:0;}
+    100% {transform:scaleX(1); margin-left:0;opacity:1;}
+
+}
+
+.left-content{
+    padding:0px;
+}
+
+@media screen and (max-width: 1200px) {
+    .profile-links-wrapper{
+        flex-flow:column;
+    }
+    .profile-links{
+        order:1;
+    }
+}
+@media screen and (max-width: 900px) {
+    .profile-links a:hover {
+        border-bottom:solid transparent;
+        border-left:solid darkorange;
+    }
+}
+@media screen and (max-width: 800px) {
+    .profile-links-wrapper{
+        flex-flow:row;
+    }
+    .profile-links{
+        order:0;
+    }
+}
+
+
+/* Carousel Section */
 
 .grid-container {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   height:90vh;
-  grid-template-areas: 
-    'header header header'
-    'left middle right'
-    'footer footer footer';
+  grid-template-areas:
+    'a a a'
+    'b c d'
+    'e e e';
+  /*border:2px solid black; /* for demo */
+}
+
+
+#item1 {
+    grid-area: a;
+    font-size: 30px;
+    font-family:copperplate,fantasy;
+}
+#item2 {
+    grid-area: b;
+    justify-self:end;
+}
+#item3 {
+    grid-area: c;
+    justify-self:center;
+}
+#item4 {
+    grid-area: d;
+    justify-self:start;
+}
+#item5 {
+    grid-area: e;
+    justify-self:center;
+    font-style:italic;
 }
 
 .grid-item {
   text-align: center;
   font-size:20px;
   padding:0px 20px;
- 
+  /*border:2px solid red; /* for demo */
 }
 
 .imgBtn{
@@ -163,6 +251,7 @@ a{
     color:var(--tx--color);
     cursor:pointer;
     transition:1s;
+    align-self:center;
 }
 
 .imgBtn:hover{
@@ -170,121 +259,92 @@ a{
 }
 
 .slide-image {
-  background-image: url("../first-website/images/thinking.jpg");
+  background-image: url("https://github.com/ryonski/first-website/blob/main/images/thinking.jpg?raw=true");
   height: 60vh;
   width: 50vh;
-  border: 2px solid var(--tx--color); 
-  background-position: center;
+  border: 2px solid var(--tx--color);
   background-repeat: no-repeat;
   background-size: cover;
-}
-.profile-section{
-    height:100vh;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;   
-
-}
-img{
-    border: 2px solid var(--tx--color); 
-    border-radius: 8px;
-    width:30%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+  /*animation: fade 5s; */ /*TO DO: trigger fade out animation with imgBtn onclick */
+  transition: border 1s;
 }
 
-img:hover {
-  transform: scaleX(-1);
-}
+@keyframes fade {
+   from {opacity: 1;}
+   to {opacity: 1;}
+ }
 
-.profile-links {
-    background-color:var(--bg--color);
-    padding:5px;
-    align-items: center;
-    justify-content: center; 
-    transition:1s;
-}
-.profile-links a{
-    padding: 10px;
-    transition: 0.5s;
-    font-size:20px;
-    color:var(--tx--color);
-    border-width:2px;
-    border-bottom:solid transparent;
-}
-.profile-links a:hover{
-    color:var(--lk--color);
-    border-bottom:solid darkorange;
-}
-    
+ /* Chrome, Safari, Opera */
+ @-webkit-keyframes fade {
+   from {opacity: 1;}
+   to {opacity: 1;}
+ }
+
 </style>
 
 <body>
-<nav class="tab-bar">
-  <ul class="tabs">
-    <li>
-      <a href="#intro">Intro</a>
-    </li>
-    <li>
-      <a href="#middle">Middle</a>
-    </li>
-    <li>
-      <a href="#profile">Profile</a>
-    </li>
-    <li>
-      <button id="toggle-button" onclick="toggleMode()">&#9789</button>
-      
-    </li>
-  </ul>
-</nav>
-<section id="intro" class="intro-section">
-    <h1>Hi I'm ryonski</h1>
-    <h2> More about me...</h2>
-</section>
+    <nav class="tab-bar">
+        <div class="tabs">
+            <a href="#about-page">About</a>
+            <a href="#why-page" onclick="gototab('#why-page');">Why</a>
+            <button id="toggle-button" onclick="toggleMode()">&#9789</button>
+        </div>
+    </nav>
 
-<section id="middle" class="middle-section">
-<div class="grid-container">
-    <div id="item1" class="grid-item"><h3>Why I want to join the programme?</h3></div>
-    <div id="item2" class="grid-item">
-        <button class="imgBtn" id="backBtn"><</button>
-    </div>
-    <div id="item3" class="grid-item">
-            <div id="slide-image" class="slide-image"></div>
-    </div>
-    <div id="item4" class="grid-item">    
-        <button class="imgBtn" id="nextBtn">></button>
-    </div>
-    <div id="item5" class="grid-item"><h4> Click on next to find out</h4></div>
-</div>
-</section>
+    <section id="about-page" class="about-page">
+        <div class="left-container">
+            <div class="left-content">
+                <h2>About Me</h2>
+                <p> Some text here blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+                <p> Some more text here</p>
+                <p> ...</p>
+                <p> ...</p>
+                <p> And finally more text here blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</p>
+            </div>
+        </div>
 
-<section id="profile" class="profile-section">
-    <div><h2>Profile links</h2></div>
-    <div class="profile-image"><img src="../first-website/images/kiwi.png" alt=Kiwi></div>
-    <br>
-    <div class="profile-links">
-        <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
-        <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
-        <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
-    </div>
-</section>
-<footer>
-    <p> Footer message goes here</p>
-</footer>
+        <div class="right-container">
+            <div class="profile-image">
+                 <img src="https://github.com/ryonski/first-website/blob/main/images/profile.jpg?raw=true">
+            </div>
+            <div class="profile-links-wrapper">
+                <div class="profile-links">
+                    <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
+                    <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
+                    <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
+                </div>
+                <img id="avatar" src="https://github.com/ryonski/first-website/blob/main/images/kiwi.png?raw=true"
+             alt="kiwi">
+            </div>
+        </div>
+    </section>
+
+    <section id="why-page" class="why-page">
+        <div class="grid-container">
+            <div id="item1" class="grid-item"><h3>Why Join Programme?</h3></div>
+            <div id="item2" class="grid-item">
+                <button class="imgBtn" id="backBtn">&#9664</button>
+            </div>
+            <div id="item3" class="grid-item">
+                    <div id="slide-image" class="slide-image"></div>
+            </div>
+            <div id="item4" class="grid-item">
+                <button class="imgBtn" id="nextBtn">&#9654</button>
+            </div>
+            <div id="item5" class="grid-item"><h3> Click on next to find out</h3></div>
+        </div>
+    </section>
 </body>
 
 <script>
 var images = {
-    img4:{name:"Cats", title:"Have Fun With Katas", src:"../first-website/images/cats.jpg", caption:"New Year Celebrations", height: "50vh", width: "80vh"},
-    
-    img3:{name:"Aerogel",title:"Create Amazing Things", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
-    
-    img1:{name:"Heron", title:"Learn From The Masters",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Gray Heron", height: "70vh", width: "50vh"},
+    img4:{name:"Cats", title:"And Have Some Fun With Katas", src:"../first-website/images/cats.jpg", caption:"New Year Celebrations", height: "50vh", width: "70vh"},
 
-	img2:{name:"Monkeys", title:"Make New Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Hot spring", height: "60vh", width: "80vh"}
+    img3:{name:"Aerogel",title:"Create Amazing Things", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
+
+    img1:{name:"Heron", title:"To Learn From The Masters",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Gray Heron", height: "70vh", width: "50vh"},
+
+	img2:{name:"Monkeys", title:"Make New Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Hot Spring", height: "50vh", width: "65vh"}
 }
 
 function toggleMode() {
@@ -303,12 +363,12 @@ document.getElementById("nextBtn").addEventListener("click", function(){
     i++;
     updateSlide()
     });
-    
+
 document.getElementById("backBtn").addEventListener("click", function(){
     i--;
     updateSlide()
     });
-    
+
 function updateSlide(){
     document.getElementById("slide-image").style.backgroundImage = 'url('+images['img'+i].src+')';
     document.getElementById("item5").innerHTML= images['img'+i].caption+" => img"+i;
@@ -316,7 +376,7 @@ function updateSlide(){
     document.getElementById("slide-image").style.height = images['img'+i].height;
     document.getElementById("slide-image").style.width = images['img'+i].width;
     checkIndex()};
-    
+
 function checkIndex() {
     if (i == Object.keys(images).length) {
         ctlBtn("hide","nextBtn")
@@ -329,15 +389,20 @@ function checkIndex() {
             ctlBtn ("unhide","backBtn")
         }
     };
-    
+
 function ctlBtn(action, btn){
     if (action=="hide") {
         document.getElementById(btn).style.display = "none";
-    } 
+    }
     if (action=="unhide"){
     document.getElementById(btn).style.display = "block";
     }
 }
+/* TODO:  to figure out how to preserve dark/light mode when reloading a page*/
+function gototab(reload)
+   {
+    window.location.hash = reload;
+    window.location.reload(true);
+   }
 
 </script>
-</html>
