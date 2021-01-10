@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-    
 <style>
 
 :root {
@@ -262,23 +259,23 @@ a{
 }
 
 .slide-image {
-  background-image: url("https://github.com/ryonski/first-website/blob/main/images/thinking.jpg?raw=true");
+  background-image: url("../first-website/images/thinking.jpg");
   height: 60vh;
   width: 50vh;
   border: 2px solid var(--tx--color);
   background-repeat: no-repeat;
   background-size: cover;
-  /*animation: fade 5s;*/
+  animation: fade 5s;
 }
-/* TO DO: fade out image when nextButton is clicked*/
 
 @keyframes fade {
-   from {opacity: 1;}
+   from {opacity: 0.2;}
    to {opacity: 1;}
  }
+
  /* Chrome, Safari, Opera */
  @-webkit-keyframes fade {
-   from {opacity: 1;}
+   from {opacity: 0.2;}
    to {opacity: 1;}
  }
 
@@ -305,11 +302,11 @@ a{
             </div>
         </div>
 
-        <div class="right-container"> 
-        <div class="profile-image">
-                 <img src="https://github.com/ryonski/first-website/blob/main/images/profile.jpg?raw=true"
-                 alt="person">
-                 <!--<img src="../first-website/images/ME.jpeg" alt="ME">-->
+        <div class="right-container">
+            <div class="profile-image">
+                <!--<img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                 alt="person">-->
+                 <src img="file:///Users/ryanlyons/Desktop/My%20Project/ME.jpeg">
             </div>
             <div class="profile-links-wrapper">
                 <div class="profile-links">
@@ -410,4 +407,3 @@ function gototab(reload)
    }
 
 </script>
-</html>
