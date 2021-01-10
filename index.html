@@ -217,6 +217,16 @@ a{
             width:100%;
             
         }
+        .grid-container {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             padding: 5px;
+        }
+
+        body {
+             margin:0;
+        }
         
 }
 
@@ -232,17 +242,21 @@ a{
     'a a a'
     'b c d'
     'e e e';
-  /*border:2px solid black; /* for demo */
+  /*border:2px solid red; /* for demo */
+  
 }
 
 #item1 {
     grid-area: a;
     font-size: 30px;
     font-family: Chalkduster, fantasy
+    border:2px solid orange;
 }
 #item2 {
     grid-area: b;
     justify-self:end;
+    /*border:2px solid blue;/* for demo */
+  
 }
 #item3 {
     grid-area: c;
@@ -251,6 +265,7 @@ a{
 #item4 {
     grid-area: d;
     justify-self:start;
+    /*border:2px solid green;/* for demo */
 }
 #item5 {
     grid-area: e;
@@ -276,6 +291,12 @@ a{
 
 .imgBtn:hover{
     color:var(--lk--color);
+}
+
+
+
+.imgBtn:focus {
+  outline: none;
 }
 
 .slide-image {
@@ -334,17 +355,21 @@ a{
 
     <section id="why-page" class="why-page">
         <div class="grid-container">
-            <div id="item1" class="grid-item"><h3>The FAC Programme?</h3></div>
+            <div id="item1" class="grid-item"><h3>Why I want to join the programme?</h3></div>
             <div id="item2" class="grid-item">
-                <button class="imgBtn" id="backBtn">&#9664;</button>
+                <button class="imgBtn" id="backBtn">&#x25C4;</button>
             </div>
             <div id="item3" class="grid-item">
-                    <div id="slide-image" class="slide-image"></div>
+                <div id="slide-image" class="slide-image"></div>
+             </div>
+             <div id="item4" class="grid-item">
+                <button class="imgBtn" id="nextBtn">&#x25BA;
+
+</button>
             </div>
-            <div id="item4" class="grid-item">
-                <button class="imgBtn" id="nextBtn">&#9654;</button>
+            <div id="item5" class="grid-item">
+                <h4> Click on next to find out</h4>
             </div>
-            <div id="item5" class="grid-item"><h3> Click on next to find out</h3></div>
         </div>
     </section>
 
