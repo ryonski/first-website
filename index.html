@@ -1,3 +1,7 @@
+<!-- <!DOCTYPE html> TO DO: Find out why this stops avatar animation moving from left to right -->
+
+<html>
+
 <style>
 
 :root {
@@ -50,6 +54,7 @@ body{
 }
 
 /* Nav bar Section */
+
 a{
     text-decoration: none;
     color: var(--tx--color);
@@ -66,15 +71,12 @@ a{
     transition:1s;
  }
 
-
 .tabs a{
     float:left;
     display:block;
     transition:1s;
     padding: 14px 16px;
     text-align: center;
-
-
 }
 
 .tabs a:hover{
@@ -97,12 +99,10 @@ a{
     margin-top: 8px;
 }
 
-
 /* Profile Section */
 .about-page {
-  display: flex;        /* Flex layout so items have equal height  */
-  flex-flow: row wrap;  /* Allow items to wrap into multiple lines */
-  /*border:2px solid black; /*for demo*/
+  display: flex;        
+  flex-flow: row wrap;   
 }
 
 .left-container{
@@ -154,7 +154,6 @@ a{
     border-bottom:3px solid darkorange;
 }
 
-
 #avatar{
     width:80px;
     height:80px;
@@ -169,7 +168,6 @@ a{
     50% {transform:scaleX(-1); margin-left:80;opacity:0;}
     51% {transform:scaleX(1); margin-left:80;opacity:0;}
     100% {transform:scaleX(1); margin-left:0;opacity:1;}
-
 }
 
 .left-content{
@@ -184,6 +182,7 @@ a{
         order:1;
     }
 }
+
 @media screen and (max-width: 900px) {
     .profile-links a:hover {
         border-bottom:solid transparent;
@@ -213,7 +212,6 @@ a{
     'e e e';
   /*border:2px solid black; /* for demo */
 }
-
 
 #item1 {
     grid-area: a;
@@ -249,8 +247,8 @@ a{
     background-color:var(--bt--color);
     font-size:40px;
     color:var(--tx--color);
+    transition: 1s;
     cursor:pointer;
-    transition:1s;
     align-self:center;
 }
 
@@ -263,10 +261,10 @@ a{
   height: 60vh;
   width: 50vh;
   border: 2px solid var(--tx--color);
+  transition: border 1s;
   background-repeat: no-repeat;
   background-size: cover;
   /*animation: fade 5s; */ /*TO DO: trigger fade out animation with imgBtn onclick */
-  transition: border 1s;
 }
 
 @keyframes fade {
@@ -286,8 +284,8 @@ a{
     <nav class="tab-bar">
         <div class="tabs">
             <a href="#about-page">About</a>
-            <a href="#why-page" onclick="gototab('#why-page');">Why</a>
-            <button id="toggle-button" onclick="toggleMode()">&#9789</button>
+            <a href="#why-page" onclick="gototab(href);">Why</a>
+            <button id="toggle-button" onclick="toggleMode()">&#9789;</button>
         </div>
     </nav>
 
@@ -323,21 +321,21 @@ a{
         <div class="grid-container">
             <div id="item1" class="grid-item"><h3>Why Join Programme?</h3></div>
             <div id="item2" class="grid-item">
-                <button class="imgBtn" id="backBtn">&#9664</button>
+                <button class="imgBtn" id="backBtn">&#9664;</button>
             </div>
             <div id="item3" class="grid-item">
                     <div id="slide-image" class="slide-image"></div>
             </div>
             <div id="item4" class="grid-item">
-                <button class="imgBtn" id="nextBtn">&#9654</button>
+                <button class="imgBtn" id="nextBtn">&#9654;</button>
             </div>
             <div id="item5" class="grid-item"><h3> Click on next to find out</h3></div>
         </div>
     </section>
-</body>
+
 
 <script>
-var images = {
+    var images = {
     img4:{name:"Cats", title:"And Have Some Fun With Katas", src:"../first-website/images/cats.jpg", caption:"New Year Celebrations", height: "50vh", width: "70vh"},
 
     img3:{name:"Aerogel",title:"Create Amazing Things", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
@@ -345,7 +343,7 @@ var images = {
     img1:{name:"Heron", title:"To Learn From The Masters",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Gray Heron", height: "70vh", width: "50vh"},
 
 	img2:{name:"Monkeys", title:"Make New Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Hot Spring", height: "50vh", width: "65vh"}
-}
+    }
 
 function toggleMode() {
    var element = document.body;
@@ -398,7 +396,7 @@ function ctlBtn(action, btn){
     document.getElementById(btn).style.display = "block";
     }
 }
-/* TODO:  to figure out how to preserve dark/light mode when reloading a page*/
+/* TODO: Preserve dark/light mode when reloading page*/
 function gototab(reload)
    {
     window.location.hash = reload;
@@ -406,3 +404,5 @@ function gototab(reload)
    }
 
 </script>
+</body>
+</html>
