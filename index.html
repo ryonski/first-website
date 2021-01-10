@@ -134,7 +134,7 @@ a{
     width:100%;
 }
 
-.profile-links-wrapper{
+.profile-bar{
     display:flex;
     flex-flow:row;
     width:100%;
@@ -144,14 +144,14 @@ a{
     padding:10px;
 }
 
-.profile-links {
+.profile-links-wrapper {
     /*background-color: orange; /*For Demo*/
     padding:5px;
     transition:1s;
     order:0;
 }
 
-.profile-links a{
+.profile-links-wrapper a{
     padding: 10px;
     transition: 0.5s;
     font-size:20px;
@@ -159,7 +159,7 @@ a{
     border:3px solid transparent;
 }
 
-.profile-links a:hover{
+.profile-links-wrapper a:hover{
     color:var(--lk--color);
     border-bottom:3px solid darkorange;
 }
@@ -181,25 +181,25 @@ a{
 }
 
 @media screen and (max-width: 1200px) {
-    .profile-links-wrapper{
+    .profile-bar{
         flex-flow:column;
     }
-    .profile-links{
+    .profile-links-wrapper{
         order:1;
     }
 }
 
 @media screen and (max-width: 900px) {
-    .profile-links a:hover {
+    .profile-links-wrapper a:hover {
         border-bottom:solid transparent;
         border-left:solid darkorange;
     }
 }
 @media screen and (max-width: 800px) {
-    .profile-links-wrapper{
+    .profile-bar{
         flex-flow:row;
     }
-    .profile-links{
+    .profile-links-wrapper{
         order:0;
     }
 }
@@ -303,8 +303,8 @@ a{
                 <div class="profile-image">
                      <img src="https://github.com/ryonski/first-website/blob/main/images/profile.jpg?raw=true">
                 </div>
-                <div class="profile-links-wrapper">
-                    <div class="profile-links">
+                <div class="profile-bar">
+                    <div class="profile-links-wrapper">
                         <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
                         <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
                         <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
