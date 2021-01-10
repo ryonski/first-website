@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
 <style>
 
 :root {
@@ -202,8 +203,6 @@ a{
 }
 
 
-
-
 /* Carousel Section */
 
 .grid-container {
@@ -263,23 +262,23 @@ a{
 }
 
 .slide-image {
-  background-image: url("../first-website/images/thinking.jpg");
+  background-image: url("https://github.com/ryonski/first-website/blob/main/images/thinking.jpg?raw=true");
   height: 60vh;
   width: 50vh;
   border: 2px solid var(--tx--color);
   background-repeat: no-repeat;
   background-size: cover;
-  animation: fade 5s;
+  /*animation: fade 5s;*/
 }
+/* TO DO: fade out image when nextButton is clicked*/
 
 @keyframes fade {
    from {opacity: 1;}
-   to {opacity: 0;}
+   to {opacity: 1;}
  }
-
  /* Chrome, Safari, Opera */
  @-webkit-keyframes fade {
-   from {opacity: 0.2;}
+   from {opacity: 1;}
    to {opacity: 1;}
  }
 
@@ -306,9 +305,9 @@ a{
             </div>
         </div>
 
-        <div class="right-container">
-            <div class="profile-image">
-                 <img src="https://images.unsplash.com/photo-1487640228478-7a32e30a9e40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+        <div class="right-container"> 
+        <div class="profile-image">
+                 <img src="https://github.com/ryonski/first-website/blob/main/images/profile.jpg?raw=true"
                  alt="person">
                  <!--<img src="../first-website/images/ME.jpeg" alt="ME">-->
             </div>
@@ -318,7 +317,8 @@ a{
                     <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
                     <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
                 </div>
-                <img id="avatar" src="../first-website/images/kiwi.png" alt="kiwi.alt">
+                <img id="avatar" src="https://github.com/ryonski/first-website/blob/main/images/kiwi.png?raw=true"
+             alt="kiwi">
             </div>
         </div>
     </section>
@@ -338,74 +338,76 @@ a{
             <div id="item5" class="grid-item"><h3> Click on next to find out</h3></div>
         </div>
     </section>
-
-
-    <script>
-        var images = {
-            img4:{name:"Cats", title:"And Have Some Fun With Katas", src:"../first-website/images/cats.jpg", caption:"New Year Celebrations", height: "50vh", width: "70vh"},
-
-            img3:{name:"Aerogel",title:"Create Amazing Things", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
-
-            img1:{name:"Heron", title:"To Learn From The Masters",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Gray Heron", height: "70vh", width: "50vh"},
-
-        	img2:{name:"Monkeys", title:"Make New Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Hot Spring", height: "50vh", width: "65vh"}
-        }
-
-        function toggleMode() {
-            var element = document.body;
-            element.classList.toggle("dark-mode");
-            var ele = document.getElementById("toggle-button");
-            (ele.innerHTML==String.fromCharCode(9789)?
-            ele.innerHTML = "&#9788":ele.innerHTML = "&#9789");
-        }
-
-        ctlBtn ("hide","backBtn")
-        var i=0;
-
-        document.getElementById("nextBtn").addEventListener("click", function(){
-            i++;
-            updateSlide()
-        });
-
-        document.getElementById("backBtn").addEventListener("click", function(){
-            i--;
-            updateSlide()
-            });
-
-        function updateSlide(){
-            document.getElementById("slide-image").style.backgroundImage = 'url('+images['img'+i].src+')';
-            document.getElementById("item5").innerHTML= images['img'+i].caption+" => img"+i;
-            document.getElementById("item1").innerHTML= images['img'+i].title;
-            document.getElementById("slide-image").style.height = images['img'+i].height;
-            document.getElementById("slide-image").style.width = images['img'+i].width;
-            checkIndex()};
-
-        function checkIndex() {
-            if (i == Object.keys(images).length) {
-                ctlBtn("hide","nextBtn")
-            } else {
-                ctlBtn("unhide","nextBtn")
-            }
-            if (i ==1) {
-                ctlBtn ("hide","backBtn")
-            } else{
-                ctlBtn ("unhide","backBtn")
-            }
-        };
-
-        function ctlBtn(action, btn){
-            if (action=="hide") {
-                document.getElementById(btn).style.display = "none";
-            }
-            if (action=="unhide"){
-                document.getElementById(btn).style.display = "block";
-            }
-        }
-        /* TODO:  to figure out how to preserve dark/light mode when reloading page*/
-        function gototab(reload){
-            window.location.hash = reload;
-            window.location.reload(true);
-        }
-    </script>
 </body>
+
+<script>
+var images = {
+    img4:{name:"Cats", title:"And Have Some Fun With Katas", src:"../first-website/images/cats.jpg", caption:"New Year Celebrations", height: "50vh", width: "70vh"},
+
+    img3:{name:"Aerogel",title:"Create Amazing Things", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
+
+    img1:{name:"Heron", title:"To Learn From The Masters",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Gray Heron", height: "70vh", width: "50vh"},
+
+	img2:{name:"Monkeys", title:"Make New Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Hot Spring", height: "50vh", width: "65vh"}
+}
+
+function toggleMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+   element = document.getElementById("toggle-button");
+    if (element.innerHTML=="☽")
+    element.innerHTML = "&#9788";
+    else element.innerHTML = "&#9789";
+}
+
+ctlBtn ("hide","backBtn")
+var i=0;
+
+document.getElementById("nextBtn").addEventListener("click", function(){
+    i++;
+    updateSlide()
+    });
+
+document.getElementById("backBtn").addEventListener("click", function(){
+    i--;
+    updateSlide()
+    });
+
+function updateSlide(){
+    document.getElementById("slide-image").style.backgroundImage = 'url('+images['img'+i].src+')';
+    document.getElementById("item5").innerHTML= images['img'+i].caption+" => img"+i;
+    document.getElementById("item1").innerHTML= images['img'+i].title;
+    document.getElementById("slide-image").style.height = images['img'+i].height;
+    document.getElementById("slide-image").style.width = images['img'+i].width;
+    checkIndex()};
+
+function checkIndex() {
+    if (i == Object.keys(images).length) {
+        ctlBtn("hide","nextBtn")
+        } else {
+            ctlBtn("unhide","nextBtn")
+        }
+        if (i ==1) {
+            ctlBtn ("hide","backBtn")
+        } else{
+            ctlBtn ("unhide","backBtn")
+        }
+    };
+
+function ctlBtn(action, btn){
+    if (action=="hide") {
+        document.getElementById(btn).style.display = "none";
+    }
+    if (action=="unhide"){
+    document.getElementById(btn).style.display = "block";
+    }
+}
+/* TODO:  to figure out how to preserve dark/light mode when reloading a page*/
+function gototab(reload)
+   {
+    window.location.hash = reload;
+    window.location.reload(true);
+   }
+
+</script>
 </html>
