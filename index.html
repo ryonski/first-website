@@ -114,7 +114,7 @@ a{
 }
 
 .left-content{
-    margin:10;
+    padding:20px;
 }
 
 .right-container{
@@ -123,6 +123,10 @@ a{
     flex-flow:column;
     justify-content:center;
     /*border:2px solid red; /*for demo*/
+}
+
+.right-content-wrapper{
+    margin-top:30;
 }
 
 .profile-image img{
@@ -274,7 +278,9 @@ a{
     <nav class="tab-bar">
         <div class="tabs">
             <a href="#about-page">About</a>
-            <a href="#why-page">Why</a>
+            <a href="#why-page">Why</a> 
+            <!-- Not working fully
+            <a href="#why-page" onclick="gototab('#why-page');">Why</a>*/-->
             <button id="toggle-button" onclick="toggleMode()">&#9789;</button>
         </div>
     </nav>
@@ -292,17 +298,19 @@ a{
         </div>
 
         <div class="right-container">
-            <div class="profile-image">
-                 <img src="https://github.com/ryonski/first-website/blob/main/images/profile.jpg?raw=true">
-            </div>
-            <div class="profile-links-wrapper">
-                <div class="profile-links">
-                    <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
-                    <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
-                    <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
+            <div class="right-content-wrapper">
+                <div class="profile-image">
+                     <img src="https://github.com/ryonski/first-website/blob/main/images/profile.jpg?raw=true">
                 </div>
-                <img id="avatar" src="https://github.com/ryonski/first-website/blob/main/images/kiwi.png?raw=true"
-             alt="kiwi">
+                <div class="profile-links-wrapper">
+                    <div class="profile-links">
+                        <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
+                        <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
+                        <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
+                    </div>
+                    <img id="avatar" src="https://github.com/ryonski/first-website/blob/main/images/kiwi.png?raw=true"
+                 alt="kiwi">
+                </div>
             </div>
         </div>
     </section>
@@ -386,7 +394,7 @@ function ctlBtn(action, btn){
     document.getElementById(btn).style.display = "block";
     }
 }
-/* TODO: Preserve dark/light mode when reloading page*/
+/* TODO: How to preserve dark/light mode when reloading page?*/
 function gototab(reload)
    {
     window.location.hash = reload;
