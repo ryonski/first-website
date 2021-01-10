@@ -1,3 +1,7 @@
+<!-- <!DOCTYPE html> TO DO: Find out why this stops avatar animation moving from left to right -->
+
+<html>
+
 <style>
 
 :root {
@@ -27,7 +31,7 @@
 body{
     background-color:var(--bg--color);
     color:var(--tx--color);
-    font-family: sans-serif;
+    font-family: Comic Sans MS, Comic Sans, cursive;
     transition:1s;
 }
 
@@ -50,10 +54,12 @@ body{
 }
 
 /* Nav bar Section */
+
 a{
     text-decoration: none;
     color: var(--tx--color);
     font-size: 30px;
+    font-family: Marker Felt, fantasy
 }
 
 .tab-bar{
@@ -66,15 +72,12 @@ a{
     transition:1s;
  }
 
-
 .tabs a{
     float:left;
     display:block;
     transition:1s;
     padding: 14px 16px;
     text-align: center;
-
-
 }
 
 .tabs a:hover{
@@ -97,12 +100,10 @@ a{
     margin-top: 8px;
 }
 
-
 /* Profile Section */
 .about-page {
-  display: flex;        /* Flex layout so items have equal height  */
-  flex-flow: row wrap;  /* Allow items to wrap into multiple lines */
-  /*border:2px solid black; /*for demo*/
+  display: flex;        
+  flex-flow: row wrap;  
 }
 
 .left-container{
@@ -110,38 +111,47 @@ a{
     display:flex;
     flex-flow:column;
     /*border:2px solid blue; /*for demo*/
-    padding:10px;
+    /*padding:10px;*/
+}
+
+.left-content{
+    padding:20px;
 }
 
 .right-container{
-    width:45%;
+    width:50%;
     display:flex;
     flex-flow:column;
     justify-content:center;
     /*border:2px solid red; /*for demo*/
 }
 
+.right-content-wrapper{
+    margin-top:30;
+}
+
 .profile-image img{
     width:100%;
 }
 
-.profile-links-wrapper{
+.profile-bar{
     display:flex;
     flex-flow:row;
+    width:100%;
     align-items:center;
-    background-color: var(--nv--color);
+    background-color: var(--bg--color);
     transition:1s;
     padding:10px;
 }
 
-.profile-links {
-    background-color:var(--nv--color);
+.profile-links-wrapper {
+    /*background-color: orange; /*For Demo*/
     padding:5px;
     transition:1s;
     order:0;
 }
 
-.profile-links a{
+.profile-links-wrapper a{
     padding: 10px;
     transition: 0.5s;
     font-size:20px;
@@ -149,11 +159,10 @@ a{
     border:3px solid transparent;
 }
 
-.profile-links a:hover{
+.profile-links-wrapper a:hover{
     color:var(--lk--color);
     border-bottom:3px solid darkorange;
 }
-
 
 #avatar{
     width:80px;
@@ -169,34 +178,56 @@ a{
     50% {transform:scaleX(-1); margin-left:80;opacity:0;}
     51% {transform:scaleX(1); margin-left:80;opacity:0;}
     100% {transform:scaleX(1); margin-left:0;opacity:1;}
-
-}
-
-.left-content{
-    padding:0px;
 }
 
 @media screen and (max-width: 1200px) {
-    .profile-links-wrapper{
+    .profile-bar{
         flex-flow:column;
     }
-    .profile-links{
+    .profile-links-wrapper{
         order:1;
     }
 }
+
 @media screen and (max-width: 900px) {
-    .profile-links a:hover {
+    .profile-links-wrapper a:hover {
         border-bottom:solid transparent;
         border-left:solid darkorange;
     }
 }
 @media screen and (max-width: 800px) {
-    .profile-links-wrapper{
+    .profile-bar{
         flex-flow:row;
     }
-    .profile-links{
+    .profile-links-wrapper{
         order:0;
     }
+}
+
+@media screen and (max-width: 320px) {
+    .about-page {
+        flex-flow: row wrap-reverse;  
+        margin-top:10;
+        }
+        .left-container{
+            width:100%;
+           
+        }
+        .right-container{
+            width:100%;
+            
+        }
+        .grid-container {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             padding: 5px;
+        }
+
+        body {
+             margin:0;
+        }
+        
 }
 
 
@@ -211,18 +242,21 @@ a{
     'a a a'
     'b c d'
     'e e e';
-  /*border:2px solid black; /* for demo */
+  /*border:2px solid red; /* for demo */
+  
 }
-
 
 #item1 {
     grid-area: a;
     font-size: 30px;
-    font-family:copperplate,fantasy;
+    font-family: Chalkduster, fantasy
+    border:2px solid orange;
 }
 #item2 {
     grid-area: b;
     justify-self:end;
+    /*border:2px solid blue;/* for demo */
+  
 }
 #item3 {
     grid-area: c;
@@ -231,6 +265,7 @@ a{
 #item4 {
     grid-area: d;
     justify-self:start;
+    /*border:2px solid green;/* for demo */
 }
 #item5 {
     grid-area: e;
@@ -249,8 +284,8 @@ a{
     background-color:var(--bt--color);
     font-size:40px;
     color:var(--tx--color);
+    transition: 1s;
     cursor:pointer;
-    transition:1s;
     align-self:center;
 }
 
@@ -258,27 +293,25 @@ a{
     color:var(--lk--color);
 }
 
+
+.imgBtn:focus {
+  outline: none;
+}
+
+#backBtn{
+    transform:scaleX(-1);
+}
+
 .slide-image {
   background-image: url("https://github.com/ryonski/first-website/blob/main/images/thinking.jpg?raw=true");
   height: 60vh;
   width: 50vh;
   border: 2px solid var(--tx--color);
+  transition: border 1s;
   background-repeat: no-repeat;
   background-size: cover;
-  /*animation: fade 5s; */ /*TO DO: trigger fade out animation with imgBtn onclick */
-  transition: border 1s;
 }
 
-@keyframes fade {
-   from {opacity: 1;}
-   to {opacity: 1;}
- }
-
- /* Chrome, Safari, Opera */
- @-webkit-keyframes fade {
-   from {opacity: 1;}
-   to {opacity: 1;}
- }
 
 </style>
 
@@ -286,8 +319,10 @@ a{
     <nav class="tab-bar">
         <div class="tabs">
             <a href="#about-page">About</a>
-            <a href="#why-page" onclick="gototab('#why-page');">Why</a>
-            <button id="toggle-button" onclick="toggleMode()">&#9789</button>
+            <a href="#why-page">Why</a> 
+            <!-- Not working fully
+            <a href="#why-page" onclick="gototab('#why-page');">Why</a>*/-->
+            <button id="toggle-button" onclick="toggleMode()">&#9789;</button>
         </div>
     </nav>
 
@@ -304,48 +339,52 @@ a{
         </div>
 
         <div class="right-container">
-            <div class="profile-image">
-                 <img src="https://github.com/ryonski/first-website/blob/main/images/profile.jpg?raw=true">
-            </div>
-            <div class="profile-links-wrapper">
-                <div class="profile-links">
-                    <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
-                    <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
-                    <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
+            <div class="right-content-wrapper">
+                <div class="profile-image">
+                     <img src="https://github.com/ryonski/first-website/blob/main/images/profile.jpg?raw=true">
                 </div>
-                <img id="avatar" src="https://github.com/ryonski/first-website/blob/main/images/kiwi.png?raw=true"
-             alt="kiwi">
+                <div class="profile-bar">
+                    <div class="profile-links-wrapper">
+                        <a href="https://github.com/ryonski/first-website/blob/main/index.html" target="_blank" class="links">GitHub</a>
+                        <a href="http://freecodecamp.org/ryonski" target="_blank" class="links">freeCodeCamp</a>
+                        <a href="https://www.codewars.com/users/ryonski" target="_blank" class="links">Codewars</a>
+                    </div>
+                    <img id="avatar" src="https://github.com/ryonski/first-website/blob/main/images/kiwi.png?raw=true"
+                 alt="kiwi">
+                </div>
             </div>
         </div>
     </section>
 
     <section id="why-page" class="why-page">
         <div class="grid-container">
-            <div id="item1" class="grid-item"><h3>Why Join Programme?</h3></div>
+            <div id="item1" class="grid-item"><h3>Why I want to join the programme?</h3></div>
             <div id="item2" class="grid-item">
-                <button class="imgBtn" id="backBtn">&#9664</button>
+                <button class="imgBtn" id="backBtn">&#x25BA;</button>
             </div>
             <div id="item3" class="grid-item">
-                    <div id="slide-image" class="slide-image"></div>
+                <div id="slide-image" class="slide-image"></div>
+             </div>
+             <div id="item4" class="grid-item">
+                <button class="imgBtn" id="nextBtn">&#x25BA;</button>
             </div>
-            <div id="item4" class="grid-item">
-                <button class="imgBtn" id="nextBtn">&#9654</button>
+            <div id="item5" class="grid-item">
+                <h4> Click on next to find out</h4>
             </div>
-            <div id="item5" class="grid-item"><h3> Click on next to find out</h3></div>
         </div>
     </section>
-</body>
+
 
 <script>
-var images = {
-    img4:{name:"Cats", title:"And Have Some Fun With Katas", src:"../first-website/images/cats.jpg", caption:"New Year Celebrations", height: "50vh", width: "70vh"},
+    var images = {
+    img4:{name:"Cats", title:"And Have Fun With Katas", src:"../first-website/images/cats.jpg", caption:"New Year Celebrations", height: "50vh", width: "70vh"},
 
     img3:{name:"Aerogel",title:"Create Amazing Things", src:"https://upload.wikimedia.org/wikipedia/commons/8/85/Aerogel_nasa.jpg",caption:"Aerogel", height: "60vh", width: "60vh"},
 
     img1:{name:"Heron", title:"To Learn From The Masters",  src:"https://upload.wikimedia.org/wikipedia/commons/7/7e/Graureiher.jpg",caption:"Gray Heron", height: "70vh", width: "50vh"},
 
 	img2:{name:"Monkeys", title:"Make New Friends", src:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Jigokudani_hotspring_in_Nagano_Japan_001.jpg",caption:"Hot Spring", height: "50vh", width: "65vh"}
-}
+    }
 
 function toggleMode() {
    var element = document.body;
@@ -398,7 +437,7 @@ function ctlBtn(action, btn){
     document.getElementById(btn).style.display = "block";
     }
 }
-/* TODO:  to figure out how to preserve dark/light mode when reloading a page*/
+/* TODO: How to preserve dark/light mode when reloading page?*/
 function gototab(reload)
    {
     window.location.hash = reload;
@@ -406,3 +445,5 @@ function gototab(reload)
    }
 
 </script>
+</body>
+</html>
