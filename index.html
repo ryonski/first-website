@@ -169,14 +169,6 @@ a{
     50% {transform:scaleX(-1); margin-left:80;opacity:0;}
     51% {transform:scaleX(1); margin-left:80;opacity:0;}
     100% {transform:scaleX(1); margin-left:0;opacity:1;}
-    
-@-webkit-keyframes  kiwi {
-    0% {transform:scaleX(1); margin-left:0;}
-    1% {transform:scaleX(-1); margin-left:0;}
-    30% {opacity:1;}
-    50% {transform:scaleX(-1); margin-left:80;opacity:0;}
-    51% {transform:scaleX(1); margin-left:80;opacity:0;}
-    100% {transform:scaleX(1); margin-left:0;opacity:1;}
 
 }
 
@@ -267,23 +259,24 @@ a{
 }
 
 .slide-image {
-  background-image: url("../first-website/images/thinking.jpg");
+  background-image: url("https://github.com/ryonski/first-website/blob/main/images/thinking.jpg?raw=true");
   height: 60vh;
   width: 50vh;
   border: 2px solid var(--tx--color);
   background-repeat: no-repeat;
   background-size: cover;
-  animation: fade 5s;
+  /*animation: fade 5s; */ /*TO DO: trigger fade out animation with imgBtn onclick */
+  transition: border 1s;
 }
 
 @keyframes fade {
-   from {opacity: 0.2;}
+   from {opacity: 1;}
    to {opacity: 1;}
  }
 
  /* Chrome, Safari, Opera */
  @-webkit-keyframes fade {
-   from {opacity: 0.2;}
+   from {opacity: 1;}
    to {opacity: 1;}
  }
 
@@ -312,9 +305,7 @@ a{
 
         <div class="right-container">
             <div class="profile-image">
-                <!--<img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                 alt="person">-->
-                 <src img="file:///Users/ryanlyons/Desktop/My%20Project/ME.jpeg">
+                 <img src="https://github.com/ryonski/first-website/blob/main/images/profile.jpg?raw=true">
             </div>
             <div class="profile-links-wrapper">
                 <div class="profile-links">
@@ -332,18 +323,18 @@ a{
         <div class="grid-container">
             <div id="item1" class="grid-item"><h3>Why Join Programme?</h3></div>
             <div id="item2" class="grid-item">
-                <button class="imgBtn" id="backBtn">&#9664;</button>
+                <button class="imgBtn" id="backBtn">&#9664</button>
             </div>
             <div id="item3" class="grid-item">
                     <div id="slide-image" class="slide-image"></div>
             </div>
             <div id="item4" class="grid-item">
-                <button class="imgBtn" id="nextBtn">&#9654;</button>
+                <button class="imgBtn" id="nextBtn">&#9654</button>
             </div>
             <div id="item5" class="grid-item"><h3> Click on next to find out</h3></div>
         </div>
     </section>
-
+</body>
 
 <script>
 var images = {
@@ -415,5 +406,3 @@ function gototab(reload)
    }
 
 </script>
-
-</body>
