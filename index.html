@@ -169,6 +169,14 @@ a{
     50% {transform:scaleX(-1); margin-left:80;opacity:0;}
     51% {transform:scaleX(1); margin-left:80;opacity:0;}
     100% {transform:scaleX(1); margin-left:0;opacity:1;}
+    
+@-webkit-keyframes  kiwi {
+    0% {transform:scaleX(1); margin-left:0;}
+    1% {transform:scaleX(-1); margin-left:0;}
+    30% {opacity:1;}
+    50% {transform:scaleX(-1); margin-left:80;opacity:0;}
+    51% {transform:scaleX(1); margin-left:80;opacity:0;}
+    100% {transform:scaleX(1); margin-left:0;opacity:1;}
 
 }
 
@@ -324,18 +332,18 @@ a{
         <div class="grid-container">
             <div id="item1" class="grid-item"><h3>Why Join Programme?</h3></div>
             <div id="item2" class="grid-item">
-                <button class="imgBtn" id="backBtn">&#9664</button>
+                <button class="imgBtn" id="backBtn">&#9664;</button>
             </div>
             <div id="item3" class="grid-item">
                     <div id="slide-image" class="slide-image"></div>
             </div>
             <div id="item4" class="grid-item">
-                <button class="imgBtn" id="nextBtn">&#9654</button>
+                <button class="imgBtn" id="nextBtn">&#9654;</button>
             </div>
             <div id="item5" class="grid-item"><h3> Click on next to find out</h3></div>
         </div>
     </section>
-</body>
+
 
 <script>
 var images = {
@@ -407,3 +415,5 @@ function gototab(reload)
    }
 
 </script>
+
+</body>
