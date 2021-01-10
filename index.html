@@ -110,11 +110,15 @@ a{
     display:flex;
     flex-flow:column;
     /*border:2px solid blue; /*for demo*/
-    padding:10px;
+    /*padding:10px;*/
+}
+
+.left-content{
+    margin:10;
 }
 
 .right-container{
-    width:45%;
+    width:50%;
     display:flex;
     flex-flow:column;
     justify-content:center;
@@ -128,14 +132,15 @@ a{
 .profile-links-wrapper{
     display:flex;
     flex-flow:row;
+    width:100%;
     align-items:center;
-    background-color: var(--nv--color);
+    background-color: var(--bg--color);
     transition:1s;
     padding:10px;
 }
 
 .profile-links {
-    background-color:var(--nv--color);
+    /*background-color: orange; /*For Demo*/
     padding:5px;
     transition:1s;
     order:0;
@@ -168,10 +173,6 @@ a{
     50% {transform:scaleX(-1); margin-left:80;opacity:0;}
     51% {transform:scaleX(1); margin-left:80;opacity:0;}
     100% {transform:scaleX(1); margin-left:0;opacity:1;}
-}
-
-.left-content{
-    padding:0px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -264,19 +265,8 @@ a{
   transition: border 1s;
   background-repeat: no-repeat;
   background-size: cover;
-  /*animation: fade 5s; */ /*TO DO: trigger fade out animation with imgBtn onclick */
 }
 
-@keyframes fade {
-   from {opacity: 1;}
-   to {opacity: 1;}
- }
-
- /* Chrome, Safari, Opera */
- @-webkit-keyframes fade {
-   from {opacity: 1;}
-   to {opacity: 1;}
- }
 
 </style>
 
@@ -284,7 +274,7 @@ a{
     <nav class="tab-bar">
         <div class="tabs">
             <a href="#about-page">About</a>
-            <a href="#why-page" onclick="gototab('#why-page');">Why?</a>
+            <a href="#why-page">Why</a>
             <button id="toggle-button" onclick="toggleMode()">&#9789;</button>
         </div>
     </nav>
